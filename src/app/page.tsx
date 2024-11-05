@@ -37,12 +37,12 @@ export default function ComingSoonPage() {
   }, [])
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-950 to-gray-900 text-gray-100 font-sans">
+    <div className="min-h-screen flex flex-col bg-black text-gray-100 font-sans">
       <header className="p-4 sm:p-6">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            {/* <Rocket className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-400" />
-            <span className="text-xl sm:text-2xl font-bold text-emerald-400 tracking-tight">Easy Launch</span> */}
+            {/* <span className="text-xl sm:text-2xl font-bold text-emerald-400 tracking-tight">Easy Launch</span> */}
+            <img width={150} src='https://www.dropbox.com/scl/fi/if1feskwnt27zqnln8uug/ASKPPL_Wordmark_Logo.png?rlkey=un3gj8k5h0x08ogw1dp1r2dds&st=0eqzubuy&dl=0&raw=1'/>
           </div>
         </div>
       </header>
