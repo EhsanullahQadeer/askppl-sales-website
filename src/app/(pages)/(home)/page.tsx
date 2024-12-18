@@ -1,7 +1,9 @@
 export default function Home() {
   return (
-<div>
-  hello
-</div>
+    <>
+     <div className="text">
+      this is the base
+     </div>
+    </>
   );
 }

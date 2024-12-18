@@ -1,15 +1,57 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const aeonik = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Aeonik/Aeonik-Light.otf",
+      weight: "250",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Aeonik/Aeonik-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Aeonik/Aeonik-Regular.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Aeonik/Aeonik-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-aeonik",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const neueMontreal = localFont({
+  src: [
+    {
+      path: "../../public/fonts/PPNeueMontreal/PPNeueMontreal-Light.otf",
+      weight: "250",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/PPNeueMontreal/PPNeueMontreal-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/PPNeueMontreal/PPNeueMontreal-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/PPNeueMontreal/PPNeueMontreal-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-neue-montreal",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${aeonik.variable} ${neueMontreal.variable} antialiased`}
       >
         {children}
       </body>
