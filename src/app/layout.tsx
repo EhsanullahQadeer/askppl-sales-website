@@ -67,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${aeonik.variable} ${neueMontreal.variable} antialiased bg-dark`}
+        className={`${aeonik.variable} ${neueMontreal.variable} antialiased bg-dark text-white`}
       >
         {children}
       </body>

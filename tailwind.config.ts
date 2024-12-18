@@ -27,6 +27,7 @@ export default {
         "7xl": ["72px", { letterSpacing: "-1.44px", lineHeight: "120%" }],
       },
       colors: {
+        white: "#fff",
         black: "#000000",
         dark: "#0F0F0F",
         grey: "#303030",
