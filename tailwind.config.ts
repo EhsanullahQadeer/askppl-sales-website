@@ -36,6 +36,10 @@ export default {
         lightLime: "#B9E567",
         secondaryLime: "#90B941",
       },
+      backgroundImage: {
+        "glass-white-gradient":
+          "linear-gradient(145deg, rgba(255, 255, 255, 0.10) 13.38%, rgba(255, 255, 255, 0.16) 93.32%)",
+      },
     },
   },
   plugins: [],
