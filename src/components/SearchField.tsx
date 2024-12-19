@@ -62,7 +62,7 @@ const SearchField = (props: Props) => {
           value={inputValue}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className="w-full bg-dark outline-none text-base px-4 py-3 border border-[#FFFFFF33] focus-within:border-white rounded-xl font-medium text-white"
+          className="w-full bg-dark outline-none text-base px-4 py-3 border border-etherealWhite focus-within:border-white rounded-xl font-medium text-white"
         />
         <span className="text-white absolute top-1/2 -translate-y-1/2 right-4">
           <SearchIcon />
@@ -71,7 +71,7 @@ const SearchField = (props: Props) => {
 
       {showSuggestions && (
         <ul
-          className="absolute w-full -mt-4 pt-4 bg-glass-white-gradient text-white rounded-b-xl shadow-md shadow-grey"
+          className="absolute w-full -mt-4 pt-4 bg-glass-white-gradient text-white rounded-b-xl shadow-md shadow-grey z-[1]"
           style={{
             backdropFilter: "blur(50px)",
           }}

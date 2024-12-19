@@ -20,11 +20,12 @@ export default {
         lg: ["18px", { letterSpacing: "-0.18px", lineHeight: "132%" }],
         xl: ["20px", { letterSpacing: "-0.2px", lineHeight: "132%" }],
         "2xl": ["24px", { letterSpacing: "-0.24px", lineHeight: "112%" }],
-        "3xl": ["32px", { letterSpacing: "-0.56px", lineHeight: "112%" }],
-        "4xl": ["36px", { letterSpacing: "-0.72px", lineHeight: "112%" }],
-        "5xl": ["48px", { letterSpacing: "-0.96px", lineHeight: "120%" }],
-        "6xl": ["64px", { letterSpacing: "-1.28px", lineHeight: "120%" }],
-        "7xl": ["72px", { letterSpacing: "-1.44px", lineHeight: "120%" }],
+        "3xl": ["28px", { letterSpacing: "-0.56px", lineHeight: "112%" }],
+        "4xl": ["32px", { letterSpacing: "-0.56px", lineHeight: "112%" }],
+        "5xl": ["36px", { letterSpacing: "-0.72px", lineHeight: "112%" }],
+        "6xl": ["48px", { letterSpacing: "-0.96px", lineHeight: "120%" }],
+        "7xl": ["64px", { letterSpacing: "-1.28px", lineHeight: "120%" }],
+        "8xl": ["72px", { letterSpacing: "-1.44px", lineHeight: "120%" }],
       },
       colors: {
         white: "#fff",
@@ -35,10 +36,25 @@ export default {
         lime: "#90B941",
         lightLime: "#B9E567",
         secondaryLime: "#90B941",
+
+        etherealWhite: "#FFFFFF33",
+        softWhite: "#FFFFFF80",
+        ghostWhite: "#FFFFFF0A"
       },
       backgroundImage: {
         "glass-white-gradient":
           "linear-gradient(145deg, rgba(255, 255, 255, 0.10) 13.38%, rgba(255, 255, 255, 0.16) 93.32%)",
+        "glass-frosted-stripe":
+          "linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.08) 50.39%, rgba(255, 255, 255, 0.04) 100%)",
+
+        "green-fade-vertical-top":
+          "linear-gradient(180deg, #013B30 17.96%, rgba(1, 59, 48, 0.90) 51.17%, rgba(1, 59, 48, 0.00) 100%)",
+
+        "green-fade-vertical-bottom":
+          "linear-gradient(to top, #013B30 -8.51%, rgba(1, 59, 48, 0.94) 44.68%, rgba(1, 59, 48, 0.00) 100%)",
+      },
+      screens: {
+        "2xl": "1610px",
       },
     },
   },
