@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -12,6 +13,7 @@ type Props = {
 
 const ImagesSlider = (props: Props) => {
   const { sliderItems } = props;
+  console.log("props: ", props);
   let swiperInstance: any;
   return (
     <>
