@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -5,15 +6,14 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type Props = {
-  sliderItems: any;
+  sliderItems: StaticImageData[] | string[];
 };
 
 const ImagesSlider = (props: Props) => {
   const { sliderItems } = props;
-  console.log("props: ", props);
   let swiperInstance: any;
   return (
     <>

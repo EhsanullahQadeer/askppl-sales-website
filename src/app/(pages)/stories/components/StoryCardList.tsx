@@ -55,7 +55,7 @@ function StoryCardList(props: Props) {
     }
   };
 
-  const [selectedItemId, setSelectedItemId] = useState();
+  const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
 
   const itemSelected = (item: SlideItem) => {
     router.replace(`/stories?storyId=${item.id}`, { scroll: false });

@@ -22,7 +22,7 @@ const occupations = [
 export default async function StoriesPage({
   searchParams,
 }: {
-  searchParams: { storyId: string | number };
+  searchParams: Promise<{ storyId: string | number }>;
 }) {
   const { storyId } = await searchParams;
   const artist = sliderItems.find((artist) => String(artist.id) === storyId);
@@ -50,8 +50,7 @@ export default async function StoriesPage({
       <div className="mx-5 sm:mx-[60px] lg:mx-[140px]">
         <div className="mx-auto max-w-screen-2xl">
           <div className="my-10 md:my-20 h-[1px] w-full bg-glass-frosted-stripe"></div>
-
-          <StoryContent {...{ artistData: artist }} />
+          {artist && <StoryContent {...{ artistData: artist }} />}
 
           <div
             style={{ backdropFilter: "blur(60px)" }}
