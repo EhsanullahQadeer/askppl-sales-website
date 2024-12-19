@@ -5,3 +5,5 @@ export interface SlideItem {
   title: string;
   images: StaticImageData[] | string[];
 }
+
+export type TstoryId = string | number
