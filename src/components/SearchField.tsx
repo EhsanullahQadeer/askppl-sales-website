@@ -62,7 +62,7 @@ const SearchField = (props: Props) => {
           value={inputValue}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className="w-full bg-dark outline-none text-base px-4 py-3 border border-etherealWhite focus-within:border-white rounded-xl font-medium text-white"
+          className="w-full bg-dark outline-none text-base px-4 pr-10 py-3 border border-etherealWhite focus-within:border-white rounded-xl font-medium text-white"
         />
         <span className="text-white absolute top-1/2 -translate-y-1/2 right-4">
           <SearchIcon />

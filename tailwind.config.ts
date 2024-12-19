@@ -37,13 +37,19 @@ export default {
         lightLime: "#B9E567",
         secondaryLime: "#90B941",
 
-        etherealWhite: "#FFFFFF33",
-        softWhite: "#FFFFFF80",
-        ghostWhite: "#FFFFFF0A"
+        mistWhite: "rgba(255, 255, 255, 0.10)",
+        froastedWhite: "rgba(255, 255, 255, 0.16)",
+        etherealWhite: "rgba(255, 255, 255, 0.20)",
+        softWhite: "rgba(255, 255, 255, 0.50)",
+        ghostWhite: "rgba(255, 255, 255, 0.04)",
       },
       backgroundImage: {
+        "ethereal-glow-gradient":
+          "linear-gradient(176deg, rgba(255, 255, 255, 0.03) 3.25%, rgba(255, 255, 255, 0.08) 97.22%)",
+
         "glass-white-gradient":
           "linear-gradient(145deg, rgba(255, 255, 255, 0.10) 13.38%, rgba(255, 255, 255, 0.16) 93.32%)",
+
         "glass-frosted-stripe":
           "linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.08) 50.39%, rgba(255, 255, 255, 0.04) 100%)",
 
