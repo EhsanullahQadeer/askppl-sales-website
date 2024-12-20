@@ -1,23 +1,18 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import LeftIcon from "@/assets/icons/LeftIcon";
 import RightIcon from "@/assets/icons/RightIcon";
 import VerifiedIcon from "@/assets/icons/VerifiedIcon";
-import { SlideItem } from "./types";
 import { sliderItems } from "../data/data";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { TstoryId } from "./types";
+import { useParams } from "next/navigation";
 
-interface Props {
-  currentStoryId: string | number;
-}
-
-function StoryCardList(props: Props) {
-  const { currentStoryId } = props;
-
-  console.log("currentStoryId: ", currentStoryId);
-  const router = useRouter();
+function StoryCardList() {
+  const params = useParams(); 
+  const storyId = params.storyId as TstoryId;
   const sliderRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -55,13 +50,6 @@ function StoryCardList(props: Props) {
     }
   };
 
-  const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
-
-  const itemSelected = (item: SlideItem) => {
-    router.replace(`/stories?storyId=${item.id}`, { scroll: false });
-    setSelectedItemId(item.id);
-  };
-
   return (
     <div className="w-full text-white">
       <div className="relative w-full">
@@ -81,29 +69,29 @@ function StoryCardList(props: Props) {
             onTouchEnd={handleTouchEnd}
           >
             {sliderItems.map((slide) => (
-              <div
-                key={slide.id}
-                onClick={() => itemSelected(slide)}
-                className={`flex-shrink-0 w-[105px] sm:w-[152px] h-36 sm:h-[186px] flex flex-col items-center justify-between gap-3 sm:gap-5 cursor-pointer rounded-[20px] px-3 py-4 sm:px-2 sm:py-6 transition-all duration-300 border ${
-                  selectedItemId === slide.id
-                    ? "bg-glass-white-gradient border-ghostWhite"
-                    : "bg-transparent border-etherealWhite"
-                }`}
-              >
-                <div className="relative">
-                  <Image
-                    src={slide.images[0]}
-                    alt={slide.title}
-                    className="rounded-full aspect-square object-cover w-16 sm:w-[100px] h-16 sm:h-[100px]"
-                  />
-                  <div className="absolute top-2 sm:top-3 right-0">
-                    <VerifiedIcon />
+              <Link key={slide.id} href={`/stories/${slide.id}`} passHref>
+                <div
+                  className={`flex-shrink-0 w-[105px] sm:w-[152px] h-36 sm:h-[186px] flex flex-col items-center justify-between gap-3 sm:gap-5 cursor-pointer rounded-[20px] px-3 py-4 sm:px-2 sm:py-6 transition-all duration-300 border ${
+                    storyId == slide.id
+                      ? "bg-glass-white-gradient border-ghostWhite"
+                      : "bg-transparent border-etherealWhite"
+                  }`}
+                >
+                  <div className="relative">
+                    <Image
+                      src={slide.images[0]}
+                      alt={slide.title}
+                      className="rounded-full aspect-square object-cover w-16 sm:w-[100px] h-16 sm:h-[100px]"
+                    />
+                    <div className="absolute top-2 sm:top-3 right-0">
+                      <VerifiedIcon />
+                    </div>
                   </div>
+                  <p className="text-center text-sm font-neueMontreal font-medium">
+                    {slide.title}
+                  </p>
                 </div>
-                <p className="text-center text-sm font-neueMontreal font-medium">
-                  {slide.title}
-                </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
