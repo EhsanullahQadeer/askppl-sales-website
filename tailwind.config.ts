@@ -37,12 +37,16 @@ export default {
         lightLime: "#B9E567",
         secondaryLime: "#90B941",
 
+        smokeGray: "#8E8D91",
+        midnightAsh: "#1C1C1C",
         darkCharcoal: "#323232",
+        hazyPearl: "rgba(255, 255, 255, 0.42)",
         mistWhite: "rgba(255, 255, 255, 0.10)",
         froastedWhite: "rgba(255, 255, 255, 0.16)",
         etherealWhite: "rgba(255, 255, 255, 0.20)",
         softWhite: "rgba(255, 255, 255, 0.50)",
         ghostWhite: "rgba(255, 255, 255, 0.04)",
+        gentleFog: "rgba(255, 255, 255, 0.08)",
       },
       backgroundImage: {
         "clouded-white-gradient":
