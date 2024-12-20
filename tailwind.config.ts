@@ -37,6 +37,7 @@ export default {
         lightLime: "#B9E567",
         secondaryLime: "#90B941",
 
+        darkCharcoal: "#323232",
         mistWhite: "rgba(255, 255, 255, 0.10)",
         froastedWhite: "rgba(255, 255, 255, 0.16)",
         etherealWhite: "rgba(255, 255, 255, 0.20)",
@@ -44,11 +45,23 @@ export default {
         ghostWhite: "rgba(255, 255, 255, 0.04)",
       },
       backgroundImage: {
+        "clouded-white-gradient":
+          "linear-gradient(176deg, rgba(255, 255, 255, 0.10) 3.25%, rgba(255, 255, 255, 0.10) 97.22%)",
+
+        "whisper-white-gradient":
+          "linear-gradient(113deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.02) 100%)",
+
         "ethereal-glow-gradient":
           "linear-gradient(176deg, rgba(255, 255, 255, 0.03) 3.25%, rgba(255, 255, 255, 0.08) 97.22%)",
 
+        "subtle-frost-gradient":
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.15) 100%)",
+
         "glass-white-gradient":
           "linear-gradient(145deg, rgba(255, 255, 255, 0.10) 13.38%, rgba(255, 255, 255, 0.16) 93.32%)",
+
+        "charcoal-mist-gradient":
+          "linear-gradient(180deg, rgba(15, 15, 15, 0.10) 0%, rgba(15, 15, 15, 0.20) 100%)",
 
         "glass-frosted-stripe":
           "linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.08) 50.39%, rgba(255, 255, 255, 0.04) 100%)",
@@ -61,6 +74,9 @@ export default {
       },
       screens: {
         "2xl": "1610px",
+      },
+      borderRadius: {
+        "20": "20px",
       },
     },
   },

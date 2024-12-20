@@ -1,23 +1,22 @@
-"use client";
+interface Option {
+  value: string;
+  label: string;
+}
+interface Props {
+  blogTypesArr: Option[];
+  blogTypeSelected: string;
+  setBlogTypeSelected: (value: string) => void;
+}
 
-import React, { useState } from "react";
-
-const blogTypesArr = [
-  { label: "All", value: "all" },
-  { label: "Monetization Tips", value: "monetization" },
-  { label: "Community Building", value: "community" },
-  { label: "Platform Updates", value: "platform" },
-];
-
-const BlogTypes = () => {
-  const [blogTypeSelected, setBlogTypeSelected] = useState<string>("all");
+const BlogTypes = (props: Props) => {
+  const { blogTypesArr, blogTypeSelected, setBlogTypeSelected } = props;
 
   const handleBlogTypeChange = (value: string) => {
     setBlogTypeSelected(value);
   };
 
   return (
-    <div className="flex items-center justify-center gap-3.5">
+    <div className="flex items-center justify-start gap-3.5">
       {blogTypesArr.map((blogType, idx) => {
         const { label, value } = blogType;
         return (
