@@ -17,11 +17,11 @@ const Install = () => {
       <div className="flex gap-4 lg:flex-row flex-col items-center justify-center  ">
       <MobileComponent/>
         <div className="lg:w-3/5 flex flex-col gap-4   ">
-          <div className="sm:p-[40px] p-5  border rounded-[20px] border-lowWhite bg-[#303030]">
+          <div className="sm:p-[40px] p-5  border rounded-[20px] border-ghostWhite bg-[#303030]">
             <div className="flex items-center  md:justify-start gap-[10px] mb-[24px]">
               <StarRating rating={rating} />
-              <span className="text-sm text-white50 ">•</span>
-              <span className="text-sm text-white50 font-neueMontreal ">
+              <span className="text-sm text-softWhite ">•</span>
+              <span className="text-sm text-softWhite font-neueMontreal ">
                 {rating} rating
               </span>
               <div className="flex items-center gap-[8px]">
@@ -42,11 +42,11 @@ const Install = () => {
               few taps anytime, anywhere.
             </p>
           </div>
-          <div className="sm:py-[35px] bg-[#013B30] p-5 sm:px-6 border rounded-[20px] border-lowWhite ">
+          <div className="sm:py-[35px] bg-[#013B30] p-5 sm:px-6 border rounded-[20px] border-ghostWhite ">
             <div className="flex  items-start gap-5 ">
               <div className="w-fit">
                 <div
-                  className=" flex bg-green  p-1 w-[64px] h-[64px] justify-center items-center rounded-full"
+                  className=" flex bg-lightGray  p-1 w-[64px] h-[64px] justify-center items-center rounded-full"
                 >
                   <Image
                     className="rounded-full w-full h-full object-cover"
@@ -63,7 +63,7 @@ const Install = () => {
                   effortlessly. It's fast, reliable, and feels like a native
                   app!"
                 </p>
-                <span className="text-white50 font-medium font-neueMontreal">
+                <span className="text-softWhite font-medium font-neueMontreal">
                   Thomas Clark., Content Creator
                 </span>
               </div>
