@@ -39,7 +39,10 @@ export default {
 
         etherealWhite: "#FFFFFF33",
         softWhite: "#FFFFFF80",
-        ghostWhite: "#FFFFFF0A"
+        ghostWhite: "#FFFFFF0A",
+        lowWhite: "rgba(255, 255, 255, 0.04)",
+        white50: "rgba(255, 255, 255, 0.50)",
+        green: "rgba(217, 217, 217, 0.10)"
       },
       backgroundImage: {
         "glass-white-gradient":
