@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import LeftIcon from "@/assets/icons/LeftIcon";
 import RightIcon from "@/assets/icons/RightIcon";
@@ -8,35 +9,67 @@ import { sliderItems } from "../data/data";
 import Link from "next/link";
 import { TstoryId } from "./types";
 import { useParams } from "next/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
 
 function StoryCardList() {
   const params = useParams();
   const storyId = params.storyId as TstoryId;
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (sliderRef.current) {
+      isDragging.current = true;
+      startX.current = e.touches[0].pageX;
+      scrollLeft.current = sliderRef.current.scrollLeft;
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (isDragging.current && sliderRef.current) {
+      const touchX = e.touches[0].pageX;
+      const walk = startX.current - touchX;
+      sliderRef.current.scrollLeft = scrollLeft.current + walk;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    isDragging.current = false;
+  };
+
+  const scrollLeftHandler = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft -= 168;
+    }
+  };
+
+  const scrollRightHandler = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft += 168;
+    }
+  };
 
   return (
     <div className="w-full text-white">
       <div className="relative w-full">
-        <Swiper
-          modules={[Navigation]}
-          slidesPerView="auto"
-          spaceBetween={16}
-          navigation={{
-            prevEl: ".button-prev",
-            nextEl: ".button-next",
-          }}
-          className="max-sm:!px-2.5"
+        <button
+          onClick={scrollLeftHandler}
+          className="absolute -left-10 lg:-left-[50px] top-1/2 -translate-y-1/2 z-10 text-white rounded-full flex items-center justify-center max-sm:hidden"
         >
-          {sliderItems.map((slide) => (
-            <SwiperSlide
-              key={slide.id}
-              style={{ width: "auto" }}
-              className="flex-shrink-0"
-            >
-              <Link href={`/stories/${slide.id}`} passHref>
+          <LeftIcon />
+        </button>
+
+        <div className="overflow-hidden">
+          <div
+            ref={sliderRef}
+            className="flex space-x-2.5 sm:space-x-4 overflow-x-auto scrollbar-hide scroll-smooth max-sm:px-2.5"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            {sliderItems.map((slide) => (
+              <Link key={slide.id} href={`/stories/${slide.id}`} passHref>
                 <div
                   className={`flex-shrink-0 w-[105px] sm:w-[152px] h-36 sm:h-[186px] flex flex-col items-center justify-between gap-3 sm:gap-5 cursor-pointer rounded-[20px] px-3 py-4 sm:px-2 sm:py-6 transition-all duration-300 border ${
                     (
@@ -63,14 +96,14 @@ function StoryCardList() {
                   </p>
                 </div>
               </Link>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            ))}
+          </div>
+        </div>
 
-        <button className="button-prev absolute -left-10 lg:-left-[50px] top-1/2 -translate-y-1/2 z-10 text-white rounded-full flex items-center justify-center max-sm:hidden">
-          <LeftIcon />
-        </button>
-        <button className="button-next absolute -right-10 lg:-right-[50px] top-1/2 -translate-y-1/2 z-10 text-white rounded-full flex items-center justify-center max-sm:hidden">
+        <button
+          onClick={scrollRightHandler}
+          className="absolute -right-10 lg:-right-[50px] top-1/2 -translate-y-1/2 z-10 text-white rounded-full flex items-center justify-center max-sm:hidden"
+        >
           <RightIcon />
         </button>
       </div>

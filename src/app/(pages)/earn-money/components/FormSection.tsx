@@ -13,7 +13,7 @@ import TwitterIcon from "@/assets/icons/TwitterIcon";
 import FacebookIcon from "@/assets/icons/FacebookIcon";
 import YoutubeIcon from "@/assets/icons/YoutubeIcon";
 import LinkedinIcon from "@/assets/icons/LinkedinIcon";
-import logo from "../../../../assets/icons/askppl-logo.png";
+import logo from "../../../../assets/images/askppl-logo.png";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Please fill out this field"),

@@ -12,9 +12,9 @@ const ArrowUp = () => {
       <path
         d="M5 12.5C5 12.5 8.68242 7.5 10 7.5C11.3177 7.5 15 12.5 15 12.5"
         stroke="currentColor"
-        stroke-width="1.25"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
