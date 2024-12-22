@@ -2,7 +2,7 @@ import Signal from '@/assets/icons/Signal'
 import Wifi from '@/assets/icons/Wifi'
 import mobilePic from "../../../../assets/images/mobileCard.png";
 import ImagesSlider from '@/components/ImagesSlider'
-import mobile from "../../../../assets/images/mobile.png";
+// import mobile from "../../../../assets/images/mobile.png";
 import React from 'react'
 const MobileCardData=[{images: mobilePic},{images: mobilePic},{images: mobilePic},{images: mobilePic}]
 

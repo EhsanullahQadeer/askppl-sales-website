@@ -6,12 +6,12 @@ const StarRating = ({ rating }: { rating: number }) => {
     return (
       <div className="flex space-x-1">
         {Array.from({ length: totalStars }).map((_, index) => {
-          const fillColor =
-            rating >= index + 1
-              ? "text-yellow-400" 
-              : rating > index
-              ? "text-yellow-100" 
-              : "text-gray-400"; 
+          // const fillColor =
+          //   rating >= index + 1
+          //     ? "text-yellow-400" 
+          //     : rating > index
+          //     ? "text-yellow-100" 
+          //     : "text-gray-400"; 
   
           const fillPercentage = Math.min(Math.max(rating - index, 0), 1);
   

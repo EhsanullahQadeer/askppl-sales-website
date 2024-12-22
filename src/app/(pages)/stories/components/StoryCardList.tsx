@@ -11,7 +11,7 @@ import { TstoryId } from "./types";
 import { useParams } from "next/navigation";
 
 function StoryCardList() {
-  const params = useParams(); 
+  const params = useParams();
   const storyId = params.storyId as TstoryId;
   const sliderRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
@@ -72,7 +72,11 @@ function StoryCardList() {
               <Link key={slide.id} href={`/stories/${slide.id}`} passHref>
                 <div
                   className={`flex-shrink-0 w-[105px] sm:w-[152px] h-36 sm:h-[186px] flex flex-col items-center justify-between gap-3 sm:gap-5 cursor-pointer rounded-[20px] px-3 py-4 sm:px-2 sm:py-6 transition-all duration-300 border ${
-                    storyId == slide.id
+                    (
+                      storyId
+                        ? storyId == slide.id
+                        : sliderItems[0].id === slide.id
+                    )
                       ? "bg-glass-white-gradient border-ghostWhite"
                       : "bg-transparent border-etherealWhite"
                   }`}

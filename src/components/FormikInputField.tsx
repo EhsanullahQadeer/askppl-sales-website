@@ -24,7 +24,7 @@ const FormikInputField = (props: Props) => {
     rows,
   } = props;
 
-  const [field, meta] = useField(name);
+  const [, meta] = useField(name);
 
   const hasError = meta.touched && meta.error;
 
