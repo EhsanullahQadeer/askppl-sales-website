@@ -54,7 +54,7 @@ const Page = () => {
         </div>
       </div>
       <div className="lg:px-[140px] px-5 py-[50px] flex flex-col md:gap-[50px] gap-[40px]">
-        <h2 className='text-3xl'>Related Blog</h2>
+        <h2 className='text-3xl font-medium'>Related Blog</h2>
         <div className="flex flex-wrap gap-y-10 gap-x-4">
           {blogsData.slice(0, 3).map((blog) => {
             return (
