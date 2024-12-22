@@ -1,6 +1,6 @@
-import FacebookIcon from "@/assets/icons/FacebookIcon";
+import FacebooksIcon from "@/assets/icons/FacebooksIcon";
 import InstaIcon from "@/assets/icons/InstaIcon";
-import TwitterIcon from "@/assets/icons/TwitterIcon";
+import TwittersIcon from "@/assets/icons/TwittersIcon";
 import React from "react";
 import BlogCard from "../components/BlogCard";
 import Link from "next/link";
@@ -36,7 +36,7 @@ const Page = () => {
                   <div className="flex items-center gap-3">
                     <span className="p-1.5 rounded-full border border-mistWhite">
                       {" "}
-                      <FacebookIcon />
+                      <FacebooksIcon />
                     </span>
                     <span className="p-1.5 rounded-full border border-mistWhite">
                       {" "}
@@ -44,7 +44,7 @@ const Page = () => {
                     </span>
                     <span className="p-1.5 rounded-full border border-mistWhite">
                       {" "}
-                      <TwitterIcon />
+                      <TwittersIcon />
                     </span>
                   </div>
                 </div>
