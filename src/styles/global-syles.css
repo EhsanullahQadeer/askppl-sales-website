@@ -28,3 +28,14 @@
     letter-spacing: -0.56px;
   }
 }
+
+.backdrop-16 {
+  backdrop-filter: blur(16px);
+}
+.backdrop-50 {
+  backdrop-filter: blur(50px);
+}
+
+.backdrop-60 {
+  backdrop-filter: blur(60px);
+}

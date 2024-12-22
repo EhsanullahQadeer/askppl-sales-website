@@ -14,8 +14,7 @@ const BlogCard = (props: Props) => {
 
   return (
     <div
-      style={{ backdropFilter: "blur(60px)" }}
-      className="bg-whisper-white-gradient rounded-20 border border-ghostWhite h-full flex flex-col min-w-[335px]"
+      className="backdrop-60 bg-whisper-white-gradient rounded-20 border border-ghostWhite h-full flex flex-col min-w-[335px]"
     >
       <Image
         src={image}

@@ -12,9 +12,9 @@ const MobileComponent = () => {
        <div
           style={{
             background: "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
-            backdropFilter: "blur(60px)",
+         
           }}
-          className="pt-[36px] pb-5   px-[30px] sm:px-[41px] h-full sm:w-[474px] w-full rounded-[20px] border border-ghostWhite "
+          className="backdrop-60 pt-[36px] pb-5 px-[30px] sm:px-[41px] h-full sm:w-[474px] w-full rounded-[20px] border border-ghostWhite "
         >
           <div className=''>
             <div className=' '> 

@@ -1,5 +1,10 @@
 import React from "react";
 import FormSection from "./components/FormSection";
+import StepsToWinSection from "./components/StepsToWinSection";
+import dotsBackground from "../../../assets/images/group.png";
+import InfluenceSection from "./components/InfluenceSection";
+import QuestionSection from "./components/QuestionSection";
+import SweepstakesEnded from "./components/SweepstakesEnded";
 
 const Page = () => {
   return (
@@ -10,19 +15,42 @@ const Page = () => {
         </h1>
 
         <div className="max-w-[572px] mx-auto">
-          <p className="mt-3 text-hazyPearl text-2xl font-neueMontreal font-medium text-center">
+          <p className="mt-6 sm:mt-3 text-hazyPearl text-lg sm:text-2xl font-neueMontreal font-medium text-center">
             Answer fun, engaging questions for a chance to win prizes and earn
             real money on ASKPPL.
           </p>
         </div>
       </div>
 
-      <div className="mt-[62px] max-w-3xl mx-auto max-sm:px-9">
-        <div></div>
-
-        <FormSection />
+      <div className="mx-5">
+        <div className="mt-[86px] sm:mt-[62px] max-w-3xl mx-auto">
+          {false ? (
+            <SweepstakesEnded />
+          ) : (
+            <>
+              <QuestionSection />
+              <FormSection />
+            </>
+          )}
+        </div>
       </div>
 
+      <div className="mx-5 sm:mx-[60px] lg:mx-[140px]">
+        <div className="mt-[60px] sm:mt-[100px] mb-[30px] sm:mb-[52px] mx-auto max-w-screen-2xl">
+          <StepsToWinSection />
+        </div>
+      </div>
+
+      <div
+        style={{
+          backgroundImage: `url(${dotsBackground.src})`,
+        }}
+        className="px-5 sm:px-[60px] lg:px-[140px] bg-cover bg-bottom"
+      >
+        <div className="py-[30px] sm:py-[100px] mx-auto max-w-screen-2xl">
+          <InfluenceSection />
+        </div>
+      </div>
     </div>
   );
 };

@@ -32,7 +32,7 @@ const FormikInputField = (props: Props) => {
     <div className="flex-1 flex flex-col gap-3">
       <label
         htmlFor="name"
-        className="text-white text-lg tracking-normal font-medium"
+        className="text-white text-base sm:text-lg tracking-normal font-medium"
       >
         {label} {isRequired && <span className="text-lightLime">*</span>}
       </label>
@@ -44,7 +44,7 @@ const FormikInputField = (props: Props) => {
           type={type}
           as={isTextarea ? "textarea" : "input"}
           {...(rows ? { rows } : {})}
-          className={`w-full text-base px-4 py-3 outline-none border focus-within:border-lightLime rounded-xl font-normal text-white bg-transparent resize-none ${
+          className={`w-full min-w-72 text-base px-4 py-3 outline-none border focus-within:border-lightLime rounded-xl font-normal text-white bg-transparent resize-none ${
             hasError ? "border-lightLime" : "border-etherealWhite"
           }`}
         />

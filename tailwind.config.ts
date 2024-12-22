@@ -40,16 +40,25 @@ export default {
         smokeGray: "#8E8D91",
         midnightAsh: "#1C1C1C",
         darkCharcoal: "#323232",
+        darkGray: "#1E1E1E",
+        gunMetal: "#212121",
         hazyPearl: "rgba(255, 255, 255, 0.42)",
         mistWhite: "rgba(255, 255, 255, 0.10)",
         froastedWhite: "rgba(255, 255, 255, 0.16)",
         etherealWhite: "rgba(255, 255, 255, 0.2)",
         softWhite: "rgba(255, 255, 255, 0.5)",
+        offWhite: "rgba(255, 255, 255, 0.60)",
         ghostWhite: "rgba(255, 255, 255, 0.04)",
         gentleFog: "rgba(255, 255, 255, 0.08)",
         lightGray: "rgba(217, 217, 217, 0.10)",
+        semiTransparentLime: "rgba(185, 229, 103, 0.40)",
+        shadowMist: "rgba(15, 15, 15, 0.24)",
+        dimmedGray: "rgba(15, 15, 15, 0.50)",
       },
       backgroundImage: {
+        "transparent-white-haze":
+          "linear-gradient(150deg, rgba(255, 255, 255, 0.01) 0.98%, rgba(255, 255, 255, 0.02) 101.45%)",
+
         "clouded-white-gradient":
           "linear-gradient(176deg, rgba(255, 255, 255, 0.10) 3.25%, rgba(255, 255, 255, 0.10) 97.22%)",
 
@@ -71,17 +80,37 @@ export default {
         "glass-frosted-stripe":
           "linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.08) 50.39%, rgba(255, 255, 255, 0.04) 100%)",
 
+        "dim-white-overlay":
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.10) 100%)",
+
+        "oblique-glow-overlay":
+          "linear-gradient(275deg, rgba(255, 255, 255, 0.05) 0.01%, rgba(255, 255, 255, 0.10) 106.54%)",
+
         "green-fade-vertical-top":
           "linear-gradient(180deg, #013B30 17.96%, rgba(1, 59, 48, 0.90) 51.17%, rgba(1, 59, 48, 0.00) 100%)",
 
         "green-fade-vertical-bottom":
           "linear-gradient(to top, #013B30 -8.51%, rgba(1, 59, 48, 0.94) 44.68%, rgba(1, 59, 48, 0.00) 100%)",
+
+        "linear-black-fade":
+          "linear-gradient(150deg, rgba(0, 0, 0, 0.20) 0.98%, rgba(0, 0, 0, 0.40) 101.45%)",
+
+        "linear-green-fade":
+          "linear-gradient(279deg, #57DD4F 3.91%, #B9E567 92.3%)",
+
+        "dynamic-green-gradient":
+          "linear-gradient(90deg, #57DD4F 0%, #B9E567 100%)",
       },
       screens: {
         "2xl": "1610px",
       },
       borderRadius: {
         "20": "20px",
+      },
+      boxShadow: {
+        "gray-box-shadow": "0px 25px 50px 0px rgba(15, 15, 15, 0.42)",
+        "faint-greenish-shadow":
+          "-3.265px -3.265px 6.531px 0px rgba(185, 229, 103, 0.06)",
       },
     },
   },

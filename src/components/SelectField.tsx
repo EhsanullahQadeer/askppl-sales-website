@@ -64,10 +64,7 @@ const SelectField: React.FC<SelectProps> = ({
 
       {isOpen && (
         <div
-          style={{
-            backdropFilter: "blur(50px)",
-          }}
-          className="absolute z-10 w-full mt-2.5 bg-charcoal-mist-gradient px-5 pb-4 text-white rounded-xl"
+          className="backdrop-50 absolute z-10 w-full mt-2.5 bg-charcoal-mist-gradient px-5 pb-4 text-white rounded-xl"
         >
           {options.map((option, idx) => (
             <div

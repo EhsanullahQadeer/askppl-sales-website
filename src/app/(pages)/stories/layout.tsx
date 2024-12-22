@@ -49,8 +49,7 @@ export default function StoriesLayout({
           <div>{children}</div>
 
           <div
-            style={{ backdropFilter: "blur(60px)" }}
-            className="mt-10 sm:mt-[60px] mb-5 bg-forest rounded-[20px] border border-ghostWhite flex flex-col md:flex-row justify-between items-center gap-5 overflow-hidden"
+            className="backdrop-60 mt-10 sm:mt-[60px] mb-5 bg-forest rounded-[20px] border border-ghostWhite flex flex-col md:flex-row justify-between items-center gap-5 overflow-hidden"
           >
             <div className="relative max-xl:hidden xl:pl-14">
               <Image

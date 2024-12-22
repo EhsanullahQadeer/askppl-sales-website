@@ -71,10 +71,8 @@ const SearchField = (props: Props) => {
 
       {showSuggestions && (
         <ul
-          className="absolute w-full -mt-4 pt-4 bg-glass-white-gradient text-white rounded-b-xl shadow-md shadow-grey z-[1]"
-          style={{
-            backdropFilter: "blur(50px)",
-          }}
+          className="backdrop-50 absolute w-full -mt-4 pt-4 bg-glass-white-gradient text-white rounded-b-xl shadow-md shadow-grey z-[1]"
+          
         >
           {filteredSuggestions.map((item, index) => (
             <li
