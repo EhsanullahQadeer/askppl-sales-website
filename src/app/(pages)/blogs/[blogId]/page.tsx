@@ -7,6 +7,14 @@ import Link from "next/link";
 import { blogsData } from "../data/data";
 
 const Page = () => {
+  const blogData = {
+    id: "1",
+    title: "5 Proven Tips to Monetize Your Expertise with ASKPPL",
+    date: "22 Nov 2024",
+    author: "ASKPPL team",
+    thumbnail: "", 
+    htmlContent: ` `,
+  }
   return (
     <div>
       <div className=" w-full h-full py-24 ">
@@ -19,13 +27,25 @@ const Page = () => {
                 </span>
                 <span className="text-sm text-softWhite ">•</span>
                 <span className="text-sm text-softWhite font-neueMontreal ">
-                  22 Nov 2024
+                {blogData.date}
                 </span>{" "}
               </div>
               <h2 className="sm:text-6xl text-3xl font-medium font-aeonik">
-                5 Proven Tips to Monetize Your Expertise with ASKPPL
+              {blogData.title}
               </h2>
             </div>
+            <div className="w-full mt-14 mb-10 ">
+              <img
+                src={blogData.thumbnail}
+                alt={blogData.title}
+                className=" w-full rounded-md"
+              />
+            </div>
+
+            <div
+          className="prose prose-lg mb-10 text-softWhite"
+          dangerouslySetInnerHTML={{ __html: blogData.htmlContent }}
+        />
             <div className=" w-full">
               <div className="flex flex-wrap gap-4 justify-between w-full mt-12 items-center">
                 <span className="text-sm text-softWhite font-medium font-neueMontreal ">
@@ -34,15 +54,15 @@ const Page = () => {
                 <div className="flex items-center  font-medium gap-5">
                   <span>Share:</span>
                   <div className="flex items-center gap-3">
-                    <span className="p-1.5 rounded-full border border-mistWhite">
+                    <span className="p-1.5 cursor-pointer rounded-full border border-mistWhite">
                       {" "}
                       <FacebooksIcon />
                     </span>
-                    <span className="p-1.5 rounded-full border border-mistWhite">
+                    <span className="p-1.5 cursor-pointer rounded-full border border-mistWhite">
                       {" "}
                       <InstaIcon />
                     </span>
-                    <span className="p-1.5 rounded-full border border-mistWhite">
+                    <span className="p-1.5 cursor-pointer rounded-full border border-mistWhite">
                       {" "}
                       <TwittersIcon />
                     </span>
