@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import BlogTypes from "./components/BlogTypes";
 import { blogsData, blogsSearchData, blogTypesArr } from "./data/data";
 import BlogGrid from "./components/BlogGrid";
@@ -52,7 +52,9 @@ const Page = async ({ searchParams }: PageProps) => {
 
       <div className="mx-5 sm:mx-[60px] lg:mx-[140px]">
         <div className="mt-12 mx-auto max-w-screen-2xl">
-          <BlogGrid {...{ blogs: blogsData, blogsPerPage, page }} />
+          <Suspense fallback={<h1>loading...</h1>}>
+            <BlogGrid {...{ blogs: blogsData, blogsPerPage, page }} />
+          </Suspense>
         </div>
       </div>
     </div>
