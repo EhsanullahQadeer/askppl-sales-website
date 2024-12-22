@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme"
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   content: [
@@ -91,6 +91,9 @@ export default {
 
         "green-fade-vertical-bottom":
           "linear-gradient(to top, #013B30 -8.51%, rgba(1, 59, 48, 0.94) 44.68%, rgba(1, 59, 48, 0.00) 100%)",
+
+        "midnight-ash-gradient":
+          "linear-gradient(150deg, rgba(255, 255, 255, 0.04) 0.98%, rgba(255, 255, 255, 0.10) 101.45%)",
 
         "linear-black-fade":
           "linear-gradient(150deg, rgba(0, 0, 0, 0.20) 0.98%, rgba(0, 0, 0, 0.40) 101.45%)",
