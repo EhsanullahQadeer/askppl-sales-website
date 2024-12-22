@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import StoryContent from "../components/StoryContent";
 import { sliderItems } from "../data/data";
+import { wait } from "@/lib/wait";
 
 const Page = async ({
   params,
@@ -8,6 +9,7 @@ const Page = async ({
   params: Promise<{ storyId?: string[] }>;
 }) => {
   const { storyId } = await params;
+  await wait(3000);
   let artist;
   if (storyId?.[0]) {
     artist = sliderItems.find((a) => a.id.toString() === storyId?.[0]);
