@@ -31,7 +31,7 @@ const ContactUs = () => {
     backgroundImage: `url(${back.src})`,
   }} className="bg-contain bg-no-repeat bg-bottom z-10 w-full h-full py-24">
         <div className="flex justify-center z-30 items-center">
-          <div className="flex flex-col items-center justify-center  xl:w-3/5 px-6 gap-6">
+          <div className="flex flex-col items-center justify-center  xl:w-3/5 px-6 gap-4 sm:gap-6">
             <h2 className="sm:text-6xl text-3xl font-medium font-aeonik">Contact Us</h2>
             <span className="text-hazyPearl px-3 sm:text-2xl text-lg  sm:mb-6 mb-4 font-medium text-center">
               Connect with us for support, feedback, or inquiries. We're here to

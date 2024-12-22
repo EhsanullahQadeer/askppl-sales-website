@@ -54,13 +54,13 @@ const Install = () => {
                 </div>
 
                 <div className="flex flex-col gap-3">
-                  <p className="italic text-lg ">
+                  <p className="italic sm:text-lg ">
                     {`“Installing ASKPPL on my phone was a game changer. Now I can
                     respond to questions and connect with my community
                     effortlessly. It's fast, reliable, and feels like a native
                     app!"`}
                   </p>
-                  <span className="text-softWhite font-medium font-neueMontreal">
+                  <span className="text-softWhite font-medium sm:text-base text-sm font-neueMontreal">
                     Thomas Clark., Content Creator
                   </span>
                 </div>
@@ -69,7 +69,7 @@ const Install = () => {
           </div>
         </div>
         <div className="flex-col flex gap-5 mt-20">
-          <h3 className="text-3xl font-medium font-aeonik">
+          <h3 className="sm:text-3xl text-xl font-medium font-aeonik">
             About the ASKPPL App
           </h3>
           <p className="text-gray-400 sm:text-lg font-medium ">
@@ -92,7 +92,7 @@ const Install = () => {
         className="xl:px-[140px] z-30 px-[20px] bg-cover bg-bottom  py-[100px]"
       >
         <div className="flex-col flex gap-5 mt-[60px]">
-          <h3 className="text-3xl font-medium font-aeonik">{`What's This App?`}</h3>
+          <h3 className="sm:text-3xl text-xl font-medium font-aeonik">{`What's This App?`}</h3>
           <p className="text-gray-400 sm:text-lg font-medium ">
             ASKPPL is a versatile app that transforms curiosity into
             opportunity. It allows users to ask questions directly to verified
@@ -104,7 +104,7 @@ const Install = () => {
           </p>
         </div>
         <div className="flex-col flex gap-5 mt-[60px]">
-          <h3 className="text-3xl font-medium font-aeonik">Availability </h3>
+          <h3 className="sm:text-3xl text-xl font-medium font-aeonik">Availability </h3>
           <p className="text-gray-400 sm:text-lg font-medium ">
             The ASKPPL app is accessible anytime, anywhere. Install it on your
             smartphone, tablet, or desktop to enjoy instant access without
