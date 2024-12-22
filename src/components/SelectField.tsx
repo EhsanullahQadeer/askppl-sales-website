@@ -1,3 +1,4 @@
+'use client'
 import ArrowDown from "@/assets/icons/ArrowDown";
 import ArrowUp from "@/assets/icons/ArrowUp";
 import { useState, useEffect, useRef } from "react";

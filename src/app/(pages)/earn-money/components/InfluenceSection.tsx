@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../../assets/icons/askppl-logo.png";
+import logo from "../../../../assets/images/askppl-logo.png";
 import Image from "next/image";
 import DiscordOutline from "@/assets/icons/DiscordOutline";
 import TwitterIcon from "@/assets/icons/TwitterIcon";
