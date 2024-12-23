@@ -8,6 +8,7 @@ interface IProps {
   currentPage: number;
   itemsPerPage: number;
   totalItems: number;
+  remainingBlogs: number;
 }
 const PaginationWrap = (props: IProps) => {
   const router = useRouter();
@@ -20,6 +21,7 @@ const PaginationWrap = (props: IProps) => {
       searchParams
     );
     router.push(`/blogs?${queryParams}`);
+    console.log("remainingBlogs", props.remainingBlogs);
   };
   return <Pagination {...{ onPageChange, ...props }} />;
 };
