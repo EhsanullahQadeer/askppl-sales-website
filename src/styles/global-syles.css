@@ -39,3 +39,8 @@
 .backdrop-60 {
   backdrop-filter: blur(60px);
 }
+
+.footer ul li {
+  cursor: pointer;
+  white-space: nowrap;
+}

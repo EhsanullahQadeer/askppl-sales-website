@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "../styles/global-syles.css";
+import Footer from "@/components/Footer";
 
 const aeonik = localFont({
   src: [
@@ -71,6 +72,7 @@ export default function RootLayout({
         className={`${aeonik.variable} ${neueMontreal.variable} antialiased bg-dark text-white`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
