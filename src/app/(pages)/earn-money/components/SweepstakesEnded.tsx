@@ -13,27 +13,17 @@ import Image from "next/image";
 const SweepstakesEnded = () => {
   return (
     <div className="rounded-20 border border-ghostWhite bg-gunMetal mt-5">
-      <div
-        style={{
-          background:
-            "linear-gradient(to right, rgba(10, 60, 20, 0.3) , rgba(5, 50, 60, 0.3)",
-        }}
-        className="flex items-center justify-start gap-2.5 w-full text-white py-5 sm:py-6 px-6 sm:px-8 border-b border-ghostWhite rounded-t-20 bg-center"
-      >
+      <div className="flex items-center justify-start gap-2.5 w-full text-white py-5 sm:py-6 px-6 sm:px-8 border-b border-ghostWhite rounded-t-20 bg-center bg-spring-meadow-gradient">
         <span>
           <DataRangeIcon />
         </span>
 
-        <span className="text-base sm:text-xl font-medium">Sweepstakes Has Ended</span>
+        <span className="text-base sm:text-xl font-medium">
+          Sweepstakes Has Ended
+        </span>
       </div>
 
-      <div
-        style={{
-          background:
-            "linear-gradient(to right, rgba(10, 60, 20, 0.3) , rgba(5, 50, 60, 0.3)",
-        }}
-        className="p-5 sm:p-8 flex flex-col gap-5 rounded-b-20"
-      >
+      <div className="p-5 sm:p-8 flex flex-col gap-5 rounded-b-20 bg-ocean-floor-gradient">
         <div>
           <div className="flex max-sm:flex-col flex-wrap gap-8 justify-between items-start sm:items-center">
             <div className="order-2 sm:order-1">
@@ -47,7 +37,9 @@ const SweepstakesEnded = () => {
               <CoinIcon />
 
               <div>
-                <h4 className="text-lg sm:text-xl font-bold">$100 Cash Prize</h4>
+                <h4 className="text-lg sm:text-xl font-bold">
+                  $100 Cash Prize
+                </h4>
                 <p className="font-neueMontreal text-xs font-normal -mt-0.5">
                   is yours, congratulations!
                 </p>
@@ -56,9 +48,7 @@ const SweepstakesEnded = () => {
           </div>
 
           <div className="mt-10 flex gap-3 items-center">
-            <div
-              className="backdrop-50 text-white rounded-full bg-dim-white-overlay w-10 h-10 flex justify-center items-center"
-            >
+            <div className="backdrop-50 text-white rounded-full bg-dim-white-overlay w-10 h-10 flex justify-center items-center">
               <ProfileMale />
             </div>
 
@@ -68,9 +58,7 @@ const SweepstakesEnded = () => {
           </div>
         </div>
 
-        <div
-          className="backdrop-50 p-4 sm:p-8 rounded-2xl rounded-tl-none bg-oblique-glow-overlay"
-        >
+        <div className="backdrop-50 p-4 sm:p-8 rounded-2xl rounded-tl-none bg-oblique-glow-overlay">
           <div className="flex gap-2 items-center text-softWhite">
             <span className="w-[18px] h-[18px]">
               <QuestionAnswerIconSm />
