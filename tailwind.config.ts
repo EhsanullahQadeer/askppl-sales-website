@@ -58,6 +58,9 @@ export default {
         dimmedGray: "rgba(15, 15, 15, 0.50)",
       },
       backgroundImage: {
+        "low-opacity-white-gradient":
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
+
         "transparent-white-haze":
           "linear-gradient(150deg, rgba(255, 255, 255, 0.01) 0.98%, rgba(255, 255, 255, 0.02) 101.45%)",
 
@@ -97,6 +100,12 @@ export default {
         "midnight-ash-gradient":
           "linear-gradient(150deg, rgba(255, 255, 255, 0.04) 0.98%, rgba(255, 255, 255, 0.10) 101.45%)",
 
+        "dark-dade-gradient":
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.32) 54.07%, rgba(0, 0, 0, 0.64) 100%)",
+
+        "subtle-dark-fade":
+          "linear-gradient(180deg, rgba(15, 15, 15, 0.00) 0%, #0F0F0F 80.35%)",
+
         "linear-black-fade":
           "linear-gradient(150deg, rgba(0, 0, 0, 0.20) 0.98%, rgba(0, 0, 0, 0.40) 101.45%)",
 
@@ -105,6 +114,15 @@ export default {
 
         "dynamic-green-gradient":
           "linear-gradient(90deg, #57DD4F 0%, #B9E567 100%)",
+
+        "misty-lagoon-gradient":
+          "linear-gradient(to right, rgba(10, 60, 20, 0.3), rgba(5, 50, 60, 0.3))",
+
+        "ocean-floor-gradient":
+          "linear-gradient(to right, rgba(10, 60, 20, 0.6), rgba(5, 50, 60, 0.6))",
+
+        "spring-meadow-gradient":
+          "linear-gradient(to right, rgba(20, 120, 50, 0.5),  rgba(10, 80, 100, 0.5))",
       },
       screens: {
         "2xl": "1610px",

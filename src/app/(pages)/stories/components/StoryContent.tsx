@@ -7,14 +7,22 @@ interface Props {
 
 const StoryContent = (props: Props) => {
   const { artistData } = props;
-  
+
   return (
     <div className="flex flex-col md:flex-row gap-10 md:gap-[60px]">
       <div className="md:flex-[376_1_0%] max-md:w-full max-md:h-[412px] relative">
         <div className="w-full md:pb-[123.4%] max-md:h-full relative">
           <div className="absolute top-0 left-0 w-full h-full">
             <div className="w-full h-full md:max-h-[464px] relative">
-              <ImagesSlider {...{ sliderItems: artistData?.images }} />
+              <ImagesSlider
+                {...{
+                  sliderItems: artistData?.images,
+                  isBorderRequired: true,
+                  paginationBtnPosition: "24px",
+                  paginationBtnHeight: "2px",
+                  backgroundGradient: "bg-dark-dade-gradient"
+                }}
+              />
 
               <div className="absolute bottom-14 left-0 w-full text-lg sm:text-xl text-center z-10">
                 {artistData?.title}

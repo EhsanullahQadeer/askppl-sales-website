@@ -2,21 +2,13 @@ import React from "react";
 import { IBlog } from "./types";
 import BlogCard from "./BlogCard";
 import Link from "next/link";
-import PaginationWrap from "./PaginationWrap";
 
 interface Props {
-  blogs: IBlog[];
-  page?: string;
-  blogsPerPage: number;
+  currentBlogs: IBlog[];
 }
 
 const BlogGrid = (props: Props) => {
-  const { blogs, page, blogsPerPage } = props;
-  const currentPage = page ? parseInt(page) : 1;
-
-  const indexOfLastBlog = currentPage * blogsPerPage;
-  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
-  const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
+  const { currentBlogs } = props;
 
   return (
     <div>
@@ -44,16 +36,6 @@ const BlogGrid = (props: Props) => {
             );
           })}
         </div>
-      </div>
-
-      <div className="mt-16 mb-28">
-        <PaginationWrap
-          {...{
-            currentPage,
-            itemsPerPage: blogsPerPage,
-            totalItems: blogs.length,
-          }}
-        />
       </div>
     </div>
   );
