@@ -1,6 +1,7 @@
+import InfluenceSection from "../earn-money/components/InfluenceSection";
+import FAQsSection from "./components/FAQsSection";
 import FollowersGraph from "./components/FollowersGraph";
 import Influences from "./components/Influences";
-
 export default function Home() {
   return (
     <>
@@ -11,6 +12,8 @@ export default function Home() {
       </div>
       <FollowersGraph/>
       <Influences />
+      <FAQsSection />
+      <InfluenceSection />
       </>
   );
 }

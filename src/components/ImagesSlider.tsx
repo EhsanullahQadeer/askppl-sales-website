@@ -38,7 +38,7 @@ const ImagesSlider = (props: Props) => {
         slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 2000000,
+          delay: 7000,
         }}
         pagination={{
           clickable: true,
