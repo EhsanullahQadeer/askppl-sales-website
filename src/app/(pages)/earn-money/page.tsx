@@ -1,7 +1,6 @@
 import React from "react";
 import FormSection from "./components/FormSection";
 import StepsToWinSection from "./components/StepsToWinSection";
-import dotsBackground from "../../../assets/images/group.png";
 import InfluenceSection from "./components/InfluenceSection";
 import QuestionSection from "./components/QuestionSection";
 import SweepstakesEnded from "./components/SweepstakesEnded";
@@ -41,16 +40,16 @@ const Page = () => {
         </div>
       </div>
 
-      <div
+      {/* <div
         style={{
           backgroundImage: `url(${dotsBackground.src})`,
         }}
         className="px-5 sm:px-[60px] lg:px-[140px] bg-cover bg-bottom"
       >
-        <div className="py-[30px] sm:py-[100px] mx-auto max-w-screen-2xl">
+        <div className="py-[30px] sm:py-[100px] mx-auto max-w-screen-2xl"> */}
           <InfluenceSection />
-        </div>
-      </div>
+        {/* </div>
+      </div> */}
     </div>
   );
 };
