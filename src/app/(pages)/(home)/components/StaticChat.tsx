@@ -8,7 +8,7 @@ import VerifiedIcon from '@/assets/icons/VerifiedIcon';
 const StaticChat = () => {
   return (
     <>
-         <div className="lg:p-[42px] p-5 flex flex-col gap-2 rounded-[20px] bg-ghostWhite">
+         <div className="lg:p-[42px] p-5 flex flex-col gap-2 rounded-[20px] bg-influences-Color">
               <h4 className="text-3xl font-medium sm:w-[55%]">
                 Engage your audience like never before
               </h4>

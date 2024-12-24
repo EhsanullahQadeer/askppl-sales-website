@@ -41,8 +41,9 @@ export const blogsData = [
   {
     id: 2,
     title: "5 Proven Tips to Monetize Your Expertise with ASKPPL",
-    description: "2",
-    date: "2024-11-20T00:00:00Z",
+    description:
+    "In order to join the app as a person who can answer questions you must verify you are human!",
+     date: "2024-11-20T00:00:00Z",
     tag: "Community Building",
     image: blogImg,
   },
