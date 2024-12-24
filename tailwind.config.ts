@@ -26,6 +26,8 @@ export default {
         "6xl": ["48px", { letterSpacing: "-0.96px", lineHeight: "120%" }],
         "7xl": ["64px", { letterSpacing: "-1.28px", lineHeight: "120%" }],
         "8xl": ["72px", { letterSpacing: "-1.44px", lineHeight: "120%" }],
+        "8.5xl": ["120px", { letterSpacing: "-2.4px", lineHeight: "120%" }],
+
       },
       colors: {
         white: "#fff",
