@@ -1,8 +1,8 @@
-import influencer1 from "../../../../assets/images/influencers/influencer1.jpeg";
-import influencer2 from "../../../../assets/images/influencers/influencer2.jpeg";
-import influencer3 from "../../../../assets/images/influencers/influencer3.png";
-import influencer4 from "../../../../assets/images/influencers/influencer4.png";
-import influencer5 from "../../../../assets/images/influencers/influencer5.jpeg";
+import influencer1 from "../../../../../assets/images/influencers/influencer1.jpeg";
+import influencer2 from "../../../../../assets/images/influencers/influencer2.jpeg";
+import influencer3 from "../../../../../assets/images/influencers/influencer3.png";
+import influencer4 from "../../../../../assets/images/influencers/influencer4.png";
+import influencer5 from "../../../../../assets/images/influencers/influencer5.jpeg";
 
 export const faqData = [
   {
@@ -67,4 +67,21 @@ export const QAPurchasedData = [
     description: "Q&A Pack Purchased",
     image: influencer5,
   },
+];
+
+export const incomeData = [
+  { followers: 0, income: 0 },
+  { followers: 10000, income: 100 },
+  { followers: 20000, income: 150 },
+  { followers: 30000, income: 200 },
+  { followers: 40000, income: 250 },
+  { followers: 50000, income: 300 },
+  { followers: 75000, income: 750 },
+  { followers: 100000, income: 1000 },
+  { followers: 150000, income: 2000 },
+  { followers: 250000, income: 3500 },
+  { followers: 500000, income: 6000 },
+  { followers: 750000, income: 10000 },
+  { followers: 1000000, income: 15000 },
+  { followers: 5000000, income: 100000 },
 ];

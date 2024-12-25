@@ -1,4 +1,4 @@
-import { IIncomeData } from "./types";
+import { IIncomeData } from "../types/types";
 import whiteDots from "../../../../assets/images/white-dots.png";
 import GraphIndicator from "@/assets/icons/GraphIndicator";
 import { useCallback, useEffect, useState } from "react";

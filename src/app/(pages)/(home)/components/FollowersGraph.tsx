@@ -3,28 +3,11 @@
 import React, { useState } from "react";
 import HighlightSlider from "./HighlightSlider";
 import { formatNumber } from "@/lib/formatNumbers";
-
-const incomeData = [
-  { followers: 0, income: 0 },
-  { followers: 10000, income: 100 },
-  { followers: 20000, income: 150 },
-  { followers: 30000, income: 200 },
-  { followers: 40000, income: 250 },
-  { followers: 50000, income: 300 },
-  { followers: 75000, income: 750 },
-  { followers: 100000, income: 1000 },
-  { followers: 150000, income: 2000 },
-  { followers: 250000, income: 3500 },
-  { followers: 500000, income: 6000 },
-  { followers: 750000, income: 10000 },
-  { followers: 1000000, income: 15000 },
-  { followers: 5000000, income: 100000 },
-];
+import { incomeData } from "../lib/data/data";
 
 const FollowersGraph = () => {
   const [sliderValue, setSliderValue] = useState(0);
 
-  // Calculate the active index and current data based on the slider value
   const activeIndex = Math.floor((sliderValue / 100) * (incomeData.length - 1));
   const currentData = incomeData[activeIndex];
 

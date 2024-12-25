@@ -1,7 +1,7 @@
 "use client";
 
 import DotsVertical from "@/assets/icons/DotsVertical";
-import { QAPurchasedData } from "../data/data";
+import { QAPurchasedData } from "../lib/data/data";
 import TextSquare from "@/assets/icons/TextSquare";
 import Image from "next/image";
 import jadaImg from "../../../../assets/images/jadaImg.png";
