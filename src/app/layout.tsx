@@ -69,10 +69,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Header />
       <body
         className={`${aeonik.variable} ${neueMontreal.variable} antialiased bg-dark text-white`}
       >
+              <Header />
+
         {children}
         <Footer />
       </body>

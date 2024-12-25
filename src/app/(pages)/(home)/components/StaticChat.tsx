@@ -32,7 +32,7 @@ const StaticChat = () => {
                 </p>
               </div>
               <div className="lg:mt-14  mt-4 flex gap-5">
-                <p className="md:py-5 text-hazyPearl md:px-[26px] p-3 border ml-2 border-mistWhite   md:rounded-b-[28px] md:rounded-es-[28px] md:rounded-ss-[28px] rounded-ss-[17px] roudned-b-[17px] rounded-es-[17px] bg-oblique-glow-overlay text-xs sm:text-xl">
+                <p className="md:py-5 text-hazyPearl md:px-[26px] p-3 border ml-2 border-mistWhite   md:rounded-b-[28px] md:rounded-es-[28px] md:rounded-ss-[28px] rounded-ss-[17px] rounded-b-[17px] rounded-es-[17px]  bg-oblique-glow-overlay text-xs sm:text-xl">
                   Staying focused when things weren’t going as planned lol. I
                   found strength by remembering why I started in the first place
                   which was ...{" "}
@@ -44,8 +44,8 @@ const StaticChat = () => {
                       src={female}
                       alt="user"
                     />
-                     <div className="absolute top-0 right-0">
-                      <VerifiedIcon />
+                     <div className="absolute top-0 right-0 ">
+                      <VerifiedIcon  />
                     </div>
                   </div>
                 </div>
