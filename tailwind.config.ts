@@ -61,6 +61,10 @@ export default {
         dimmedGray: "rgba(15, 15, 15, 0.50)",
       },
       backgroundImage: {
+        "green-white-Color": " linear-gradient(137deg, rgba(255, 255, 255, 0.05) -0.05%, rgba(255, 255, 255, 0.08) 101.78%)",
+        "influences-Color": "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
+
+        "influences-dark-Color": "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
         "low-opacity-white-gradient":
           "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
 
