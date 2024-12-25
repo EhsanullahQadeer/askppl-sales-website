@@ -1,8 +1,13 @@
+import influencer1 from "../../../../assets/images/influencers/influencer1.jpeg";
+import influencer2 from "../../../../assets/images/influencers/influencer2.jpeg";
+import influencer3 from "../../../../assets/images/influencers/influencer3.png";
+import influencer4 from "../../../../assets/images/influencers/influencer4.png";
+import influencer5 from "../../../../assets/images/influencers/influencer5.jpeg";
+
 export const faqData = [
   {
     question: "What is askppl?",
-    answer:
-      "askppl is a platform where you can get your questions answered.askppl is a platform where you can get your questions answered.askppl is a platform where you can get your questions answered.askppl is a platform where you can get your questions answered.askppl is a platform where you can get your questions answered.",
+    answer: "askppl is a platform where you can get your questions answered.",
   },
   {
     question: "Who can use askppl?",
@@ -32,6 +37,34 @@ export const faqData = [
   {
     question: "What does the Identity Verification process entail?",
     answer:
-      "The process includes submitting documents to verify your identity.The process includes submitting documents to verify your identity.The process includes submitting documents to verify your identity.The process includes submitting documents to verify your identity.The process includes submitting documents to verify your identity.The process includes submitting documents to verify your identity.",
+      "The process includes submitting documents to verify your identity.",
+  },
+];
+
+export const QAPurchasedData = [
+  {
+    price: "$50",
+    description: "Q&A Pack Purchased",
+    image: influencer1,
+  },
+  {
+    price: "$35",
+    description: "Q&A Pack Purchased",
+    image: influencer2,
+  },
+  {
+    price: "$32",
+    description: "Q&A Pack Purchased",
+    image: influencer3,
+  },
+  {
+    price: "$10",
+    description: "Q&A Pack Purchased",
+    image: influencer4,
+  },
+  {
+    price: "$26",
+    description: "Q&A Pack Purchased",
+    image: influencer5,
   },
 ];

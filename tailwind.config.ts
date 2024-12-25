@@ -27,7 +27,6 @@ export default {
         "7xl": ["64px", { letterSpacing: "-1.28px", lineHeight: "120%" }],
         "8xl": ["72px", { letterSpacing: "-1.44px", lineHeight: "120%" }],
         "8.5xl": ["120px", { letterSpacing: "-2.4px", lineHeight: "120%" }],
-
       },
       colors: {
         white: "#fff",
@@ -39,11 +38,15 @@ export default {
         lightLime: "#B9E567",
         secondaryLime: "#90B941",
 
+        lightPewter: "#DBDBDB",
         smokeGray: "#8E8D91",
         midnightAsh: "#1C1C1C",
         darkCharcoal: "#323232",
+        doveGray: "#878787",
         darkGray: "#1E1E1E",
         gunMetal: "#212121",
+        ironGray: "#1B1B1B",
+        eclipseGray: "#262626",
         hazyPearl: "rgba(255, 255, 255, 0.42)",
         mistWhite: "rgba(255, 255, 255, 0.10)",
         froastedWhite: "rgba(255, 255, 255, 0.16)",
@@ -109,6 +112,8 @@ export default {
         "linear-black-fade":
           "linear-gradient(150deg, rgba(0, 0, 0, 0.20) 0.98%, rgba(0, 0, 0, 0.40) 101.45%)",
 
+        "deep-space-gray": "linear-gradient(0deg, #1B1B1B 0%, #1B1B1B 100%)",
+
         "linear-green-fade":
           "linear-gradient(279deg, #57DD4F 3.91%, #B9E567 92.3%)",
 
@@ -134,6 +139,15 @@ export default {
         "gray-box-shadow": "0px 25px 50px 0px rgba(15, 15, 15, 0.42)",
         "faint-greenish-shadow":
           "-3.265px -3.265px 6.531px 0px rgba(185, 229, 103, 0.06)",
+      },
+      keyframes: {
+        slide: {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-100%)" },
+        },
+      },
+      animation: {
+        slide: "slide 2s ease-in-out",
       },
     },
   },
