@@ -15,7 +15,7 @@ const CreatorsThrive: React.FC = () => {
   const nextRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="md:pt-[100px] py-16 md:pb-[72px] px-4 relative xl:px-[140px]">
+    <div className="md:pt-[100px] py-14 md:pb-[72px] px-4 relative xl:px-[140px]">
       <div className="flex items-center mb-12 justify-between md:relative">
         <h2 className="sm:text-6xl text-4xl md:w-[560px] font-medium md:text-left text-center">
           How creators & influencers thrive using ASKPPL

@@ -14,13 +14,13 @@ const Influences = () => {
             Unlock the power of your influence
           </h2>
         </div>
-        <div className="flex flex-wrap gap-5 items-start ">
-          <div className="flex flex-col gap-5 flex-1">
+        <div className="flex flex-wrap gap-5 items-stretch ">
+          <div className="flex flex-col gap-5 flex-1 items-stretch">
           <StaticChat />
           <AboutPeople />
             <Verification />
           </div>
-          <div className="flex flex-col gap-5 flex-1">
+          <div className="flex flex-col gap-5 flex-1 items-stretch">
             <EffortlessEarns />
             <MobilePlateform />
           </div>

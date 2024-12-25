@@ -6,7 +6,7 @@ import propertyLicense from "../../../../assets/images/property-license.png";
 const Verification = () => {
   return (
     <>
-      <div className="">
+      <div className=" flex items-stretch">
         <Image
           className="rounded-[20px] w-full h-full object-cover"
           src={license}
