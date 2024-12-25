@@ -53,6 +53,7 @@ export default {
         etherealWhite: "rgba(255, 255, 255, 0.2)",
         softWhite: "rgba(255, 255, 255, 0.5)",
         offWhite: "rgba(255, 255, 255, 0.60)",
+        translucentWhite: "rgba(255, 255, 255, 0.75)",
         ghostWhite: "rgba(255, 255, 255, 0.04)",
         gentleFog: "rgba(255, 255, 255, 0.08)",
         lightGray: "rgba(217, 217, 217, 0.10)",
@@ -61,10 +62,18 @@ export default {
         dimmedGray: "rgba(15, 15, 15, 0.50)",
       },
       backgroundImage: {
-        "green-white-Color": " linear-gradient(137deg, rgba(255, 255, 255, 0.05) -0.05%, rgba(255, 255, 255, 0.08) 101.78%)",
-        "influences-Color": "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
+        "green-white-Color":
+          " linear-gradient(137deg, rgba(255, 255, 255, 0.05) -0.05%, rgba(255, 255, 255, 0.08) 101.78%)",
 
-        "influences-dark-Color": "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
+        "influences-Color":
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
+
+        "influences-dark-Color":
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
+
+        "whispering-wind-gradient":
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.04) -16.48%, rgba(255, 255, 255, 0.00) 100%)",
+
         "low-opacity-white-gradient":
           "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
 
@@ -132,6 +141,9 @@ export default {
 
         "spring-meadow-gradient":
           "linear-gradient(to right, rgba(20, 120, 50, 0.5),  rgba(10, 80, 100, 0.5))",
+
+        "electric-dreamscape-gradient":
+          "linear-gradient(90deg, #85D421 0%, #2FC373 17.5%, #34C2EE 36.5%, #434AE8 56.5%, #9C35EC 76.5%, #FF2983 100%)",
       },
       screens: {
         "2xl": "1610px",

@@ -17,7 +17,7 @@ export default function ProfileEngagementSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="mx-5 sm:mx-[60px]">
+    <div className="hidden mx-5 sm:mx-[60px]">
       {/* <div className="mx-auto max-w-screen-2xl"></div> */}
 
       <div className="flex">
