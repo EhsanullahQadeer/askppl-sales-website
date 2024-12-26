@@ -22,9 +22,23 @@ export default function FAQItem(props: Props) {
         <h3 className="text-white text-base sm:text-lg -tracking-[0.36px] font-medium">
           {question}
         </h3>
-        <span className="text-lightLime text-lg">
-          {isOpen ? <MinusIcon /> : <PlusIcon />}
-        </span>
+
+        <div className="w-6 h-6 relative text-lightLime">
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+              isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          >
+            <MinusIcon />
+          </div>
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+              isOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+          >
+            <PlusIcon />
+          </div>
+        </div>
       </div>
       <div
         className={`text-sm sm:text-base text-hazyPearl overflow-hidden transition-all duration-300 ${
