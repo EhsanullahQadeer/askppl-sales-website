@@ -41,7 +41,7 @@ export const faqData = [
   },
 ];
 
-export const QAPurchasedData = [
+export const purchasedData = [
   {
     price: "$50",
     description: "Q&A Pack Purchased",
@@ -68,6 +68,8 @@ export const QAPurchasedData = [
     image: influencer5,
   },
 ];
+
+export const QAPurchasedData = [...purchasedData, ...purchasedData];
 
 export const incomeData = [
   { followers: 0, income: 0 },

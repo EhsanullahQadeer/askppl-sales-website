@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import HighlightSlider from "./HighlightSlider";
 import { formatNumber } from "@/lib/formatNumbers";
 import { incomeData } from "../lib/data/data";
+import IncomeSlider from "./IncomeSlider";
 
 const FollowersGraph = () => {
   const [sliderValue, setSliderValue] = useState(0);
@@ -43,7 +43,7 @@ const FollowersGraph = () => {
             </div>
 
             <div className="flex-1 max-w-[865px] w-full max-md:px-8">
-              <HighlightSlider
+              <IncomeSlider
                 {...{
                   sliderValue,
                   setSliderValue,

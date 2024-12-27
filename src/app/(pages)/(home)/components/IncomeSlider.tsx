@@ -12,7 +12,7 @@ interface Props {
   activeIndex: number;
 }
 
-const HighlightSlider = (props: Props) => {
+const IncomeSlider = (props: Props) => {
   const { sliderValue, setSliderValue, currentData, incomeData, activeIndex } =
     props;
 
@@ -133,4 +133,4 @@ const HighlightSlider = (props: Props) => {
   );
 };
 
-export default HighlightSlider;
+export default IncomeSlider;

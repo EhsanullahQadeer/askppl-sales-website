@@ -19,7 +19,7 @@ const MobileComponent = () => {
   return (
     <>
       <div className="flex flex-col max-lg:items-center lg:flex-row gap-5 lg:gap-4">
-        <div className="w-[335px] lg:[474px] h-[400px] lg:h-[552px] relative pt-[36px] pb-5 px-[30px] sm:px-[41px] rounded-20 border border-ghostWhite bg-low-opacity-white-gradient">
+        <div className="w-[335px] lg:[474px] h-[400px] lg:h-[552px] relative pt-[36px] pb-5 px-[30px] sm:px-[41px] rounded-20 border border-ghostWhite bg-vanishing-light-gradient">
           <ImagesSlider
             {...{
               sliderItems: imagesArr,

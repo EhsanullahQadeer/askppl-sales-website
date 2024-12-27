@@ -1,65 +1,76 @@
 "use client";
 import Link from "next/link";
-import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import BlogCard from "../../blogs/components/BlogCard";
 import { blogsData } from "../../blogs/data/data";
-import Back from "@/assets/icons/Back";
-import Forward from "@/assets/icons/Forward";
+import RightIcon from "@/assets/icons/RightIcon";
+import LeftIcon from "@/assets/icons/LeftIcon";
+import "swiper/css";
+import "swiper/css/navigation";
 
-const CreatorsThrive: React.FC = () => {
-  const prevRef = useRef<HTMLDivElement>(null);
-  const nextRef = useRef<HTMLDivElement>(null);
-
+const CreatorsThrive = () => {
   return (
-    <div className="md:pt-[100px] py-14 md:pb-[72px] px-4 relative xl:px-[140px]">
-      <div className="flex items-center mb-12 justify-between md:relative">
-        <h2 className="sm:text-6xl text-4xl md:w-[560px] font-medium md:text-left text-center">
-          How creators & influencers thrive using ASKPPL
-        </h2>
-        <div className="absolute md:right-0 md:left-[85%] md-mt-0 mt-6 left-[50%] md:top-5 justify-center right-[50%] bottom-0  flex items-center gap-4">
-          <div
-            ref={prevRef} 
-            className="!static backdrop-blur-[60px] border rounded-full border-ghostWhite p-2 bg-whisper-white-gradient  "
-          > <Back /></div>
-          <div
-            ref={nextRef}
-            className=" !static backdrop-blur-[60px] border rounded-full border-ghostWhite p-2 bg-whisper-white-gradient "
-          ><Forward /></div>
+    <div className="mx-5 sm:mx-[60px] lg:mx-[140px] pt-9 sm:pt-[100px]">
+      <div className="mx-auto max-w-screen-2xl">
+        <div className="flex items-end justify-between gap-2 mb-[50px]">
+          <div className="max-w-[592px] max-md:mx-auto">
+            <h2 className="page-heading sm:!text-left">
+              How creators & influencers <br /> thrive using ASKPPL
+            </h2>
+          </div>
+
+          <div className="flex gap-5 items-center max-sm:hidden">
+            <button
+              className={`blogs-prev-btn backdrop-60 rounded-full flex items-center justify-center p-2.5 border border-ghostWhite text-white cursor-pointer bg-whisper-white-gradient`}
+            >
+              <LeftIcon />
+            </button>
+
+            <button
+              className={`blogs-next-btn backdrop-60 rounded-full flex items-center justify-center p-2.5 border border-ghostWhite text-white cursor-pointer bg-whisper-white-gradient`}
+            >
+              <RightIcon />
+            </button>
+          </div>
+        </div>
+        <Swiper
+          modules={[Navigation]}
+          navigation={{
+            prevEl: ".blogs-prev-btn",
+            nextEl: ".blogs-next-btn",
+          }}
+          loop={true}
+          spaceBetween={16}
+          slidesPerView={1}
+          breakpoints={{
+            810: { slidesPerView: 2 },
+            1320: { slidesPerView: 3 },
+          }}
+        >
+          {blogsData.map((blog, index) => (
+            <SwiperSlide key={index}>
+              <Link href={`/blog/${blog.id}`} key={blog.id}>
+                <BlogCard blog={blog} />
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className="flex gap-5 items-center justify-center mt-8 sm:hidden">
+          <button
+            className={`blogs-prev-btn backdrop-60 rounded-full flex items-center justify-center p-2.5 border border-ghostWhite text-white cursor-pointer bg-whisper-white-gradient`}
+          >
+            <LeftIcon />
+          </button>
+
+          <button
+            className={`blogs-next-btn backdrop-60 rounded-full flex items-center justify-center p-2.5 border border-ghostWhite text-white cursor-pointer bg-whisper-white-gradient`}
+          >
+            <RightIcon />
+          </button>
         </div>
       </div>
-      <Swiper
-        modules={[Navigation]}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
-        loop={true}
-        spaceBetween={30}
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 1 },
-          1024: { slidesPerView: 3 },
-        }}
-        onBeforeInit={(swiper) => {
-          if (prevRef.current && nextRef.current && swiper.params.navigation) {
-            const navigation = swiper.params.navigation as any;
-            navigation.prevEl = prevRef.current;
-            navigation.nextEl = nextRef.current;
-          }
-        }}
-      >
-        {blogsData.map((blog, index) => (
-          <SwiperSlide key={index}>
-            <Link href={`/blog/${blog.id}`} key={blog.id} >
-              <BlogCard blog={blog} />
-            </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
     </div>
   );
 };

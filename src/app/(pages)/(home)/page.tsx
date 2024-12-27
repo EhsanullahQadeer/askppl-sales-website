@@ -20,7 +20,6 @@ export default function Home() {
       </div>
       <ProfileEngagementSection />
       <FollowersGraph />
-      {/* <HighlightSlider /> */}
       <Influences />
       <CreatorsThrive />
       <FAQsSection />

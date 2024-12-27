@@ -14,10 +14,11 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 export default function ProfileEngagementSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   return (
-    <div className="hidden mx-5 sm:mx-[60px]">
+    <div className=" mx-5 sm:mx-[60px]">
       {/* <div className="mx-auto max-w-screen-2xl"></div> */}
 
       <div className="flex">
@@ -95,24 +96,29 @@ export default function ProfileEngagementSection() {
             </div>
           </div>
         </div>
-       
+
         <div className="ml-[60px]">
           <Image src={mobileImg} alt="mobileImg" />
         </div>
 
-        <div className="ml-3 px-8 w-[400px] h-[594px] overflow-hidden">
+        <div className="ml-3 px-8 w-[450px] h-[594px] overflow-hidden">
           <Swiper
             direction="vertical"
             slidesPerView={5}
             centeredSlides={true}
-            centeredSlidesBounds={true}
+            // centeredSlidesBounds={true}
             spaceBetween={24}
             autoplay={{
               delay: 2000,
             }}
+            speed={500}
             loop={true}
             modules={[Autoplay]}
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            onSlideChangeTransitionStart={(swiper) => {
+              setActiveIndex(swiper.realIndex);
+              setIsAnimating(true);
+            }}
+            onSlideChangeTransitionEnd={() => setIsAnimating(false)}
             className="h-full"
           >
             {QAPurchasedData.map((item, idx) => {
@@ -127,43 +133,81 @@ export default function ProfileEngagementSection() {
               return (
                 <SwiperSlide key={idx} className="!h-auto">
                   <div
-                    className={`flex items-center gap-5 rounded-full p-3.5 mx-auto bg-deep-space-gray ${
+                    className={`flex items-center gap-5 rounded-full p-3.5 mx-auto bg-deep-space-gray transition-all duration-500 w-[300px]
+                      ${
+                        isActiveIdx
+                          ? ` ${isAnimating ? "" : "bg-linear-green-fade"}`
+                          : isItemNextToActive
+                          ? "" //w-11/12
+                          : "" //w-10/12
+                      }   
+                    ${
                       isActiveIdx
-                        ? "w-full bg-linear-green-fade"
+                        ? " scale-125 my-6"
                         : isItemNextToActive
-                        ? "w-11/12"
-                        : "w-10/12"
+                        ? " scale-110"
+                        : " scale-100"
                     }`}
                   >
                     <div>
                       <Image
-                        width={isActiveIdx ? 96 : isItemNextToActive ? 86 : 64}
+                        // width={
+                        //   isActiveIdx
+                        //     ? isAnimating
+                        //       ? 86
+                        //       : 96
+                        //     : isItemNextToActive
+                        //     ? 86
+                        //     : 64
+                        // }
+                        width={64}
                         src={image}
                         alt={`influencer`}
-                        className="rounded-full"
+                        className={`rounded-full 
+                          ${""
+                          // isActiveIdx
+                          //   ? isAnimating
+                          //     ? "scale-105"
+                          //     : "scale-110"
+                          //   : isItemNextToActive
+                          //   ? "scale-105"
+                          //   : "scale-100"
+                        }
+                        `}
                       />
                     </div>
                     <div
-                      className={`${isActiveIdx ? "text-dark" : "text-white"}`}
+                      // className={`${
+                      //   isActiveIdx
+                      //     ? isAnimating
+                      //       ? "text-white"
+                      //       : "text-dark"
+                      //     : "text-white"
+                      // }`}
                     >
                       <span
-                        className={`font-bold ${
-                          isActiveIdx
-                            ? "text-[44px] leading-[46px]"
-                            : isItemNextToActive
-                            ? "text-[40px] leading-[41px]"
-                            : "text-4xl leading-[31px]"
+                        className={`font-bold text-4xl leading-[31px] ${
+                          ""
+                          // isActiveIdx
+                          //   ? isAnimating
+                          //     ? "text-[40px] leading-[41px]"
+                          //     : "text-[44px] leading-[46px]"
+                          //   : isItemNextToActive
+                          //   ? "text-[40px] leading-[41px]"
+                          //   : "text-4xl leading-[31px]"
                         }`}
                       >
                         {price}
                       </span>
                       <div
-                        className={`mt-2.5 font-medium ${
-                          isActiveIdx
-                            ? "text-base"
-                            : isItemNextToActive
-                            ? "text-sm"
-                            : "text-xs"
+                        className={`mt-2.5 font-medium text-xs ${
+                         "" // isActiveIdx
+                          //   ? isAnimating
+                          //     ? "text-sm"
+                          //     : "text-base"
+                          //   : isItemNextToActive
+                          //   ? "text-sm"
+                          //   : "text-xs"
                         }`}
                       >
                         {description}

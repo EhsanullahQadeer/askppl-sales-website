@@ -47,6 +47,7 @@ export default {
         gunMetal: "#212121",
         ironGray: "#1B1B1B",
         eclipseGray: "#262626",
+        amber: "#3F3F3F",
         hazyPearl: "rgba(255, 255, 255, 0.42)",
         mistWhite: "rgba(255, 255, 255, 0.10)",
         froastedWhite: "rgba(255, 255, 255, 0.16)",
@@ -63,19 +64,16 @@ export default {
       },
       backgroundImage: {
         "green-white-Color":
-          " linear-gradient(137deg, rgba(255, 255, 255, 0.05) -0.05%, rgba(255, 255, 255, 0.08) 101.78%)",
-
-        "influences-Color":
-          "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
-
-        "influences-dark-Color":
-          "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
+          "linear-gradient(137deg, rgba(255, 255, 255, 0.05) -0.05%, rgba(255, 255, 255, 0.08) 101.78%)",
 
         "whispering-wind-gradient":
           "linear-gradient(180deg, rgba(255, 255, 255, 0.04) -16.48%, rgba(255, 255, 255, 0.00) 100%)",
 
-        "low-opacity-white-gradient":
+        "vanishing-light-gradient":
           "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
+
+        "vanishing-gray":
+          "linear-gradient(180deg, #151515 17.96%, rgba(21, 21, 21, 0.00) 100%)",
 
         "transparent-white-haze":
           "linear-gradient(150deg, rgba(255, 255, 255, 0.01) 0.98%, rgba(255, 255, 255, 0.02) 101.45%)",
