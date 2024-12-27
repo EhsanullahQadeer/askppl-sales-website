@@ -12,7 +12,7 @@ const PerpendicularImg = () => {
       <path
         d="M1 0V249C1 262.255 11.7452 273 25 273H424"
         stroke="currentColor"
-        stroke-width="1.5"
+        strokeWidth="1.5"
       />
     </svg>
   );

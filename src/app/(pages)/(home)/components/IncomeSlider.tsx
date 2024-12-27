@@ -1,3 +1,4 @@
+"use client";
 import { IIncomeData } from "../types/types";
 import whiteDots from "../../../../assets/images/white-dots.png";
 import GraphIndicator from "@/assets/icons/GraphIndicator";
@@ -21,10 +22,12 @@ const IncomeSlider = (props: Props) => {
   const position = `${(sliderValue * (maxRange - minRange)) / 100 + minRange}%`;
 
   const calculateHeight = useCallback(() => {
+    if (typeof window !== "undefined") {
     const isSmallScreen = window.innerWidth < 640;
     return isSmallScreen
       ? `calc(${(sliderValue / 100) * 100}% + 87px)`
       : `calc(${(sliderValue / 100) * 100}% + 107px)`;
+    }
   }, [sliderValue]);
 
   const [verticalLineHeight, setVerticalLineHeight] = useState(

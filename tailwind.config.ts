@@ -142,6 +142,9 @@ export default {
 
         "electric-dreamscape-gradient":
           "linear-gradient(90deg, #85D421 0%, #2FC373 17.5%, #34C2EE 36.5%, #434AE8 56.5%, #9C35EC 76.5%, #FF2983 100%)",
+        "fade-dark-top": "linear-gradient(180deg, #0F0F0F 30.96%, rgba(15, 15, 15, 0.00) 100%)",
+        "fade-dark-bottom": 'linear-gradient(0deg, #0F0F0F 30.96%, rgba(15, 15, 15, 0.00) 100%)'
+
       },
       screens: {
         "2xl": "1610px",

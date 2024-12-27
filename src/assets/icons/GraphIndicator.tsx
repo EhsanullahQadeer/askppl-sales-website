@@ -6,7 +6,7 @@ const GraphIndicator = () => {
       xmlns="http://www.w3.org/2000/svg"
       width="7"
       height="100%"
-      viewBox="0 0 7 100%"
+      viewBox="0 0 7 300"
       fill="none"
     >
       <path
