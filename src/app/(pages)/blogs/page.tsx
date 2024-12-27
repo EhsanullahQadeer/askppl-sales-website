@@ -1,12 +1,12 @@
 import React, { Suspense } from "react";
 import BlogTypes from "./components/BlogTypes";
 import { blogsData, blogsSearchData, blogTypesArr } from "./data/data";
-import BlogGrid from "./components/BlogGrid";
 import SelectWrap from "./components/SelectWrap";
 import SearchField from "@/components/SearchField";
 import { blogsPerPage } from "./lib/constants/constant";
 import PaginationWrap from "./components/PaginationWrap";
 import BlogsSkeletonWrapper from "./components/BlogsSkeletonWrapper";
+import dynamic from "next/dynamic";
 
 interface PageProps {
   searchParams: Promise<{
@@ -26,10 +26,14 @@ const Page = async ({ searchParams }: PageProps) => {
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
   const currentBlogs = blogsData.slice(indexOfFirstBlog, indexOfLastBlog);
 
-  const remainingBlogs = Math.min(
+  const currentPageCount = Math.min(
     blogsPerPage,
     totalBlogCount - (currentPage - 1) * blogsPerPage
   );
+
+  const BlogGrid = dynamic(() => import("./components/BlogGrid"), {
+    loading: () => <BlogsSkeletonWrapper {...{ currentPageCount }} />,
+  });
 
   return (
     <div className="pt-[60px] sm:pt-24">
@@ -66,9 +70,7 @@ const Page = async ({ searchParams }: PageProps) => {
 
       <div className="mx-5 sm:mx-[60px] lg:mx-[140px]">
         <div className="mt-12 mx-auto max-w-screen-2xl">
-          <Suspense fallback={<BlogsSkeletonWrapper />}>
-            <BlogGrid {...{ currentBlogs }} />
-          </Suspense>
+          <BlogGrid key={currentPage} {...{ currentBlogs }} />
 
           <div className="mt-16 mb-28">
             <PaginationWrap
@@ -76,7 +78,6 @@ const Page = async ({ searchParams }: PageProps) => {
                 currentPage,
                 itemsPerPage: blogsPerPage,
                 totalItems: blogsData.length,
-                remainingBlogs
               }}
             />
           </div>
