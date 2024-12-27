@@ -12,7 +12,7 @@ const PolygonIcon = () => {
       <path
         d="M10 0L19.5263 12H0.473721L10 0Z"
         fill="url(#paint0_linear_379_7144)"
-        fill-opacity="0.75"
+        fillOpacity="0.75"
       />
       <defs>
         <linearGradient

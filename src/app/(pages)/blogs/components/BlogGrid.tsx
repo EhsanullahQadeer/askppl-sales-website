@@ -2,13 +2,15 @@ import React from "react";
 import { IBlog } from "./types";
 import BlogCard from "./BlogCard";
 import Link from "next/link";
+import { wait } from "@/lib/wait";
 
 interface Props {
   currentBlogs: IBlog[];
 }
 
-const BlogGrid = (props: Props) => {
+const BlogGrid = async (props: Props) => {
   const { currentBlogs } = props;
+  await wait(2000)
 
   return (
     <div>

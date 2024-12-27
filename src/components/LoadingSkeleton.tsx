@@ -1,14 +1,11 @@
-import Skeleton from "react-loading-skeleton";
+import Skeleton, { SkeletonProps } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-type Props = {
-  width?: string;
-  height?: string;
-  count?: number;
+interface IProps extends SkeletonProps {
   classes?: string;
-};
+}
 
-const LoadingSkeleton = (props: Props) => {
+const LoadingSkeleton = (props: IProps) => {
   const { width, height, count, classes } = props;
   return (
     <Skeleton
@@ -18,6 +15,7 @@ const LoadingSkeleton = (props: Props) => {
       baseColor="#1A1A1A"
       highlightColor="#2A2A2A"
       className={classes}
+      {...props}
     />
   );
 };

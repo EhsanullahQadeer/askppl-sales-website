@@ -22,8 +22,10 @@ const Header = () => {
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   const handleResize = () => {
-    if (window.innerWidth >= 640) {
-      setMenuOpen(false);
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 640) {
+        setMenuOpen(false);
+      }
     }
   };
 

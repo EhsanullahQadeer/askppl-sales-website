@@ -4,11 +4,13 @@ import FAQsSection from "./components/FAQsSection";
 import FollowersGraph from "./components/FollowersGraph";
 import Influences from "./components/Influences";
 import ProfileEngagementSection from "./components/ProfileEngagementSection";
+import PathToEarning from "./components/PathToEarning";
 import "./styles/styles.scss";
 
 export default function Home() {
   return (
     <>
+    <PathToEarning />
       <div className="pt-12 z-20 pb-8 flex gap-2 flex-col justify-center items-center">
         <h2 className="md:text-8.5xl text-6xl">Askppl</h2>
         <span className="md:text-4xl  text-hazyPearl">
