@@ -49,13 +49,7 @@ const FormSection = () => {
         return (
           <Form>
             <div className="rounded-20 border border-ghostWhite bg-midnightAsh mt-5">
-              <div
-                style={{
-                  background:
-                    "linear-gradient(to right, rgba(10, 60, 20, 0.3) , rgba(5, 50, 60, 0.3)",
-                }}
-                className="flex items-center justify-start gap-2.5 w-full text-white py-5 sm:py-6 px-8 border-b border-gentleFog rounded-t-20 bg-center"
-              >
+              <div className="flex items-center justify-start gap-2.5 w-full text-white py-5 sm:py-6 px-8 border-b border-gentleFog rounded-t-20 bg-center bg-misty-lagoon-gradient">
                 <span>
                   <QuestionAnswerIcon />
                 </span>

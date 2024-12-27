@@ -51,7 +51,7 @@ const FormikInputField = (props: Props) => {
 
         <ErrorMessage name={name}>
           {(msg) => (
-            <div className="z-50 absolute top-[95%] left-1/2 -translate-x-1/2">
+            <div className="z-50 absolute top-[95%] left-1/2 -translate-x-1/2 w-max">
               <div className="px-2">
                 <PolygonIcon />
               </div>

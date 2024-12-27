@@ -5,6 +5,8 @@ import BlogGrid from "./components/BlogGrid";
 import SelectWrap from "./components/SelectWrap";
 import SearchField from "@/components/SearchField";
 import { blogsPerPage } from "./lib/constants/constant";
+import PaginationWrap from "./components/PaginationWrap";
+import BlogsSkeletonWrapper from "./components/BlogsSkeletonWrapper";
 
 interface PageProps {
   searchParams: Promise<{
@@ -16,6 +18,18 @@ interface PageProps {
 
 const Page = async ({ searchParams }: PageProps) => {
   const { type, page } = await searchParams;
+
+  const currentPage = page ? parseInt(page) : 1;
+
+  const totalBlogCount = blogsData.length;
+  const indexOfLastBlog = currentPage * blogsPerPage;
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+  const currentBlogs = blogsData.slice(indexOfFirstBlog, indexOfLastBlog);
+
+  const remainingBlogs = Math.min(
+    blogsPerPage,
+    totalBlogCount - (currentPage - 1) * blogsPerPage
+  );
 
   return (
     <div className="pt-[60px] sm:pt-24">
@@ -52,9 +66,20 @@ const Page = async ({ searchParams }: PageProps) => {
 
       <div className="mx-5 sm:mx-[60px] lg:mx-[140px]">
         <div className="mt-12 mx-auto max-w-screen-2xl">
-          <Suspense fallback={<h1>loading...</h1>}>
-            <BlogGrid {...{ blogs: blogsData, blogsPerPage, page }} />
+          <Suspense fallback={<BlogsSkeletonWrapper />}>
+            <BlogGrid {...{ currentBlogs }} />
           </Suspense>
+
+          <div className="mt-16 mb-28">
+            <PaginationWrap
+              {...{
+                currentPage,
+                itemsPerPage: blogsPerPage,
+                totalItems: blogsData.length,
+                remainingBlogs
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme"
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   content: [
@@ -26,6 +26,7 @@ export default {
         "6xl": ["48px", { letterSpacing: "-0.96px", lineHeight: "120%" }],
         "7xl": ["64px", { letterSpacing: "-1.28px", lineHeight: "120%" }],
         "8xl": ["72px", { letterSpacing: "-1.44px", lineHeight: "120%" }],
+        "8.5xl": ["120px", { letterSpacing: "-2.4px", lineHeight: "120%" }],
       },
       colors: {
         white: "#fff",
@@ -37,17 +38,23 @@ export default {
         lightLime: "#B9E567",
         secondaryLime: "#90B941",
 
+        lightPewter: "#DBDBDB",
         smokeGray: "#8E8D91",
         midnightAsh: "#1C1C1C",
         darkCharcoal: "#323232",
+        doveGray: "#878787",
         darkGray: "#1E1E1E",
         gunMetal: "#212121",
+        ironGray: "#1B1B1B",
+        eclipseGray: "#262626",
+        amber: "#3F3F3F",
         hazyPearl: "rgba(255, 255, 255, 0.42)",
         mistWhite: "rgba(255, 255, 255, 0.10)",
         froastedWhite: "rgba(255, 255, 255, 0.16)",
         etherealWhite: "rgba(255, 255, 255, 0.2)",
         softWhite: "rgba(255, 255, 255, 0.5)",
         offWhite: "rgba(255, 255, 255, 0.60)",
+        translucentWhite: "rgba(255, 255, 255, 0.75)",
         ghostWhite: "rgba(255, 255, 255, 0.04)",
         gentleFog: "rgba(255, 255, 255, 0.08)",
         lightGray: "rgba(217, 217, 217, 0.10)",
@@ -56,6 +63,18 @@ export default {
         dimmedGray: "rgba(15, 15, 15, 0.50)",
       },
       backgroundImage: {
+        "green-white-Color":
+          "linear-gradient(137deg, rgba(255, 255, 255, 0.05) -0.05%, rgba(255, 255, 255, 0.08) 101.78%)",
+
+        "whispering-wind-gradient":
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.04) -16.48%, rgba(255, 255, 255, 0.00) 100%)",
+
+        "vanishing-light-gradient":
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%)",
+
+        "vanishing-gray":
+          "linear-gradient(180deg, #151515 17.96%, rgba(21, 21, 21, 0.00) 100%)",
+
         "transparent-white-haze":
           "linear-gradient(150deg, rgba(255, 255, 255, 0.01) 0.98%, rgba(255, 255, 255, 0.02) 101.45%)",
 
@@ -92,14 +111,37 @@ export default {
         "green-fade-vertical-bottom":
           "linear-gradient(to top, #013B30 -8.51%, rgba(1, 59, 48, 0.94) 44.68%, rgba(1, 59, 48, 0.00) 100%)",
 
+        "midnight-ash-gradient":
+          "linear-gradient(150deg, rgba(255, 255, 255, 0.04) 0.98%, rgba(255, 255, 255, 0.10) 101.45%)",
+
+        "dark-dade-gradient":
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.32) 54.07%, rgba(0, 0, 0, 0.64) 100%)",
+
+        "subtle-dark-fade":
+          "linear-gradient(180deg, rgba(15, 15, 15, 0.00) 0%, #0F0F0F 80.35%)",
+
         "linear-black-fade":
           "linear-gradient(150deg, rgba(0, 0, 0, 0.20) 0.98%, rgba(0, 0, 0, 0.40) 101.45%)",
+
+        "deep-space-gray": "linear-gradient(0deg, #1B1B1B 0%, #1B1B1B 100%)",
 
         "linear-green-fade":
           "linear-gradient(279deg, #57DD4F 3.91%, #B9E567 92.3%)",
 
         "dynamic-green-gradient":
           "linear-gradient(90deg, #57DD4F 0%, #B9E567 100%)",
+
+        "misty-lagoon-gradient":
+          "linear-gradient(to right, rgba(10, 60, 20, 0.3), rgba(5, 50, 60, 0.3))",
+
+        "ocean-floor-gradient":
+          "linear-gradient(to right, rgba(10, 60, 20, 0.6), rgba(5, 50, 60, 0.6))",
+
+        "spring-meadow-gradient":
+          "linear-gradient(to right, rgba(20, 120, 50, 0.5),  rgba(10, 80, 100, 0.5))",
+
+        "electric-dreamscape-gradient":
+          "linear-gradient(90deg, #85D421 0%, #2FC373 17.5%, #34C2EE 36.5%, #434AE8 56.5%, #9C35EC 76.5%, #FF2983 100%)",
       },
       screens: {
         "2xl": "1610px",
@@ -111,6 +153,15 @@ export default {
         "gray-box-shadow": "0px 25px 50px 0px rgba(15, 15, 15, 0.42)",
         "faint-greenish-shadow":
           "-3.265px -3.265px 6.531px 0px rgba(185, 229, 103, 0.06)",
+      },
+      keyframes: {
+        slide: {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-100%)" },
+        },
+      },
+      animation: {
+        slide: "slide 2s ease-in-out",
       },
     },
   },
