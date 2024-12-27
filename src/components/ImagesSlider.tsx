@@ -34,52 +34,54 @@ const ImagesSlider = (props: Props) => {
   let swiperInstance: any;
   return (
     <>
-      <Swiper
-        slidesPerView={1}
-        loop={true}
-        autoplay={{
-          delay: 7000,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        onSwiper={(swiper) => (swiperInstance = swiper)}
-        modules={[Autoplay, Pagination]}
-        className="w-full h-full rounded-[20px]"
-        style={
-          {
-            "--paginationBtnPosition": `${paginationBtnPosition}`,
-            "--paginationBtnHeight": `${paginationBtnHeight}`,
-          } as CustomCSSProperties
-        }
-      >
-        {sliderItems.map((item: StaticImageData | string, idx: number) => {
-          return (
-            <SwiperSlide
-              key={idx}
-              className="rounded-[20px]"
-              onMouseEnter={() => swiperInstance?.autoplay.stop()}
-              onMouseLeave={() => swiperInstance?.autoplay.start()}
-            >
-              <Image
-                src={item}
-                alt="selected-item-image"
-                className={`h-full w-full rounded-[20px] ${
-                  isBorderRequired && "border border-ghostWhite"
-                } ${imageObjectFit ? imageObjectFit : "object-cover"}`}
-              />
+      <div className="swiper-theme h-full">
+        <Swiper
+          slidesPerView={1}
+          loop={true}
+          autoplay={{
+            delay: 7000,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          onSwiper={(swiper) => (swiperInstance = swiper)}
+          modules={[Autoplay, Pagination]}
+          className="w-full h-full rounded-[20px]"
+          style={
+            {
+              "--paginationBtnPosition": `${paginationBtnPosition}`,
+              "--paginationBtnHeight": `${paginationBtnHeight}`,
+            } as CustomCSSProperties
+          }
+        >
+          {sliderItems.map((item: StaticImageData | string, idx: number) => {
+            return (
+              <SwiperSlide
+                key={idx}
+                className="rounded-[20px]"
+                onMouseEnter={() => swiperInstance?.autoplay.stop()}
+                onMouseLeave={() => swiperInstance?.autoplay.start()}
+              >
+                <Image
+                  src={item}
+                  alt="selected-item-image"
+                  className={`h-full w-full rounded-[20px] ${
+                    isBorderRequired && "border border-ghostWhite"
+                  } ${imageObjectFit ? imageObjectFit : "object-cover"}`}
+                />
 
-              {backgroundGradient ? (
-                <div
-                  className={`absolute bottom-0 left-0 h-1/2 w-full rounded-20 z-10 ${backgroundGradient}`}
-                ></div>
-              ) : (
-                <></>
-              )}
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+                {backgroundGradient ? (
+                  <div
+                    className={`absolute bottom-0 left-0 h-1/2 w-full rounded-20 z-10 ${backgroundGradient}`}
+                  ></div>
+                ) : (
+                  <></>
+                )}
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
     </>
   );
 };

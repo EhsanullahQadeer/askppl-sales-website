@@ -1,0 +1,16 @@
+.swiper-theme {
+  .swiper .swiper-pagination {
+    bottom: var(--paginationBtnPosition) !important;
+
+    .swiper-pagination-bullet {
+      width: 32px;
+      height: var(--paginationBtnHeight);
+      background: #ffffff80;
+      border-radius: 2px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #b9e567;
+    }
+  }
+}

@@ -1,18 +1,3 @@
-.swiper .swiper-pagination {
-  bottom: var(--paginationBtnPosition) !important;
-}
-
-.swiper .swiper-pagination .swiper-pagination-bullet {
-  width: 32px;
-  height: var(--paginationBtnHeight);
-  background: #ffffff80;
-  border-radius: 2px;
-}
-
-.swiper .swiper-pagination .swiper-pagination-bullet-active {
-  background: #b9e567;
-}
-
 .page-heading {
   font-family: var(--font-aeonik), sans-serif;
   text-align: center;
@@ -44,4 +29,3 @@
   cursor: pointer;
   white-space: nowrap;
 }
-

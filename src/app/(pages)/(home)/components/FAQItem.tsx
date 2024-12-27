@@ -45,7 +45,7 @@ export default function FAQItem(props: Props) {
           isOpen ? "max-h-40 mt-2" : "max-h-0 mt-0"
         }`}
       >
-        {isOpen && <p>{answer}</p>}
+        <p>{answer}</p>
       </div>
     </div>
   );
