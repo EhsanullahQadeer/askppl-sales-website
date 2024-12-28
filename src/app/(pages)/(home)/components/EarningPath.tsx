@@ -46,7 +46,7 @@ const EarningPath = () => {
                   <CircularDynamicSvg
                     {...{ circleRadius, circleCircumference, scrollProgress }}
                   >
-                    <g>
+                    {/* <g>
                       <g transform="translate(48, 48)">
                         <foreignObject x="0" y="0" width="100" height="100">
                           <div className="relative h-full w-full p-5">
@@ -56,6 +56,15 @@ const EarningPath = () => {
                           </div>
                         </foreignObject>
                       </g>
+                    </g> */}
+                    <g>
+                      <foreignObject x="48" y="48" width="100" height="100">
+                        <div className="relative h-full w-full p-5">
+                          <div className="absolute inset-0 flex justify-center items-center flex-col">
+                            <EarningPathData step={step} />
+                          </div>
+                        </div>
+                      </foreignObject>
                     </g>
 
                     <g>
@@ -64,7 +73,7 @@ const EarningPath = () => {
                       </g>
                     </g>
 
-                  <DynamicStepComponent  {...{step}}/>
+                    <DynamicStepComponent {...{ step }} />
                   </CircularDynamicSvg>
                 </div>
               </div>

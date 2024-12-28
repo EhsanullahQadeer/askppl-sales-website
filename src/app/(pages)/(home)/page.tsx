@@ -5,7 +5,7 @@ import FollowersGraph from "./components/FollowersGraph";
 import Influences from "./components/Influences";
 import ProfileEngagementSection from "./components/ProfileEngagementSection";
 import "./styles/styles.scss";
-// import EarningPath from "./components/EarningPath";
+import EarningPath from "./components/EarningPath";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
       <ProfileEngagementSection />
       <FollowersGraph />
       <Influences />
-      {/* <EarningPath /> */}
+      <EarningPath />
       <CreatorsThrive />
       <FAQsSection />
       <InfluenceSection />
