@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import BlogTypes from "./components/BlogTypes";
 import { blogsData, blogsSearchData, blogTypesArr } from "./data/data";
 import SelectWrap from "./components/SelectWrap";
