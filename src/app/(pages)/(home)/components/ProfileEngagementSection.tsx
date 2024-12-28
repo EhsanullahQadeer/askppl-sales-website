@@ -201,9 +201,9 @@ export default function ProfileEngagementSection() {
                             </div>
                           </div>
 
-                          <div className={`absolute top-1/2 right-full -left-40 flex justify-center items-center -z-10 ${isActiveIdx ? "opacity-100" : "opacity-0"}`}>
+                          {/* <div className={`absolute top-1/2 right-full -left-40 flex justify-center items-center -z-10 ${isActiveIdx ? "opacity-100" : "opacity-0"}`}>
                             <hr className="w-full border-t border-lightLime" />
-                          </div>
+                          </div> */}
                         </div>
                       </SwiperSlide>
                     );

@@ -2,8 +2,8 @@
 import { IIncomeData } from "../types/types";
 import whiteDots from "../../../../assets/images/white-dots.png";
 import GraphIndicator from "@/assets/icons/GraphIndicator";
-import { useCallback, useEffect, useState } from "react";
 import { formatNumber } from "@/lib/formatNumbers";
+import useCalculateHeight from "../hooks/useCalculateHeight";
 
 interface Props {
   sliderValue: number;
@@ -13,6 +13,7 @@ interface Props {
   activeIndex: number;
 }
 
+
 const IncomeSlider = (props: Props) => {
   const { sliderValue, setSliderValue, currentData, incomeData, activeIndex } =
     props;
@@ -21,38 +22,9 @@ const IncomeSlider = (props: Props) => {
   const maxRange = 99.8;
   const position = `${(sliderValue * (maxRange - minRange)) / 100 + minRange}%`;
 
-  const calculateHeight = useCallback(() => {
-    if (typeof window !== "undefined") {
-    const isSmallScreen = window.innerWidth < 640;
-    return isSmallScreen
-      ? `calc(${(sliderValue / 100) * 100}% + 87px)`
-      : `calc(${(sliderValue / 100) * 100}% + 107px)`;
-    }
-  }, [sliderValue]);
-
-  const [verticalLineHeight, setVerticalLineHeight] = useState(
-    calculateHeight()
-  );
-
-  const handleResize = useCallback(() => {
-    setVerticalLineHeight(calculateHeight());
-  }, [calculateHeight]);
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [handleResize, calculateHeight]);
-
-  useEffect(() => {
-    handleResize();
-  }, [handleResize, sliderValue]);
-
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSliderValue(Number(e.target.value));
-
+  const height = useCalculateHeight(sliderValue);
   return (
     <div className="slider-section relative w-full h-[228px] sm:h-[437px] flex justify-center items-center">
       <div className="h-[106px] sm:h-[269px] w-full relative flex flex-col justify-end items-center z-10">
@@ -81,7 +53,7 @@ const IncomeSlider = (props: Props) => {
           className="text-white absolute bottom-5 -translate-x-1/2 z-10 flex items-center flex-col"
           style={{
             left: position,
-            height: verticalLineHeight,
+            height: height,
           }}
         >
           <span className="text-softWhite mb-1.5">Earning</span>

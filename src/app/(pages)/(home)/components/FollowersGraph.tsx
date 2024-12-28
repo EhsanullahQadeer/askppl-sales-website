@@ -6,7 +6,7 @@ import { incomeData } from "../lib/data/data";
 import IncomeSlider from "./IncomeSlider";
 
 const FollowersGraph = () => {
-  const [sliderValue, setSliderValue] = useState(0);
+  const [sliderValue, setSliderValue] = useState(50);
 
   const activeIndex = Math.floor((sliderValue / 100) * (incomeData.length - 1));
   const currentData = incomeData[activeIndex];
