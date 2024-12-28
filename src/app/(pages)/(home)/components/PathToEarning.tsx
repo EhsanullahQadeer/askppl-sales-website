@@ -2,15 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 
 const PathToEarning = () => {
-  const [highlightedPoints, setHighlightedPoints] = useState<boolean[]>([]); // Array of highlighted points
-  const [highlightedStaticDots, setHighlightedStaticDots] = useState({
-    top: false,
-    right: false,
-    bottom: false,
-    left: false,
-  }); // State to track which static dots are highlighted
-
-  // Reference to the container div
+  const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -18,77 +10,87 @@ const PathToEarning = () => {
       const container = containerRef.current;
 
       if (container) {
-        const containerTop = container.getBoundingClientRect().top;
-        const containerHeight = container.offsetHeight;
+        const containerBounds = container.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
 
-        // Calculate scroll progress based on container height and window scroll
-        const scrollProgress = Math.min(
-          ((window.scrollY - containerTop) / containerHeight) * 100,
-          100
-        ); // Clamp the progress to a max of 100%
+        if (
+          containerBounds.top <= windowHeight &&
+          containerBounds.bottom >= 0
+        ) {
+          const containerHeight = containerBounds.height;
 
-        // Generate an array of 100 values (1 to 100) to represent the circle chunks
-        const newHighlightedPoints = Array.from(
-          { length: 100 },
-          (_, index) => index + 1 <= scrollProgress
-        );
-        setHighlightedPoints(newHighlightedPoints);
+          const progress = Math.min(
+            ((windowHeight - containerBounds.top) / containerHeight) * 100,
+            100
+          );
 
-        // Highlight static dots based on scroll progress
-        setHighlightedStaticDots({
-          top: scrollProgress >= 100,
-          right: scrollProgress >= 25,
-          bottom: scrollProgress >= 50,
-          left: scrollProgress >= 75,
-        });
+          setScrollProgress(progress);
+        }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up on unmount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const circleRadius = 60; // Radius of the circle
+  const circleCircumference = 2 * Math.PI * circleRadius; // Circumference
+
   return (
     <div ref={containerRef} className="relative h-[400vh] bg-gray-100">
-      <div className="sticky top-[50vh] mb-[50vh] left-1/2 transform -translate-x-1/2 w-40 h-40 flex items-center justify-center z-20">
-        <div className="absolute w-full h-full flex items-center justify-center">
-          {/* Circle with 100 dots */}
-          {highlightedPoints.map((highlighted, index) => (
-            <div
-              key={index}
-              className={`absolute w-3 h-3 rounded-full transition-all duration-300 ${
-                highlighted ? "bg-green-500" : "bg-white"
-              }`}
-              style={{
-                transform: `rotate(${index * 3.6}deg) translateY(-60px)`,
-                transformOrigin: "center center",
-              }}
-            ></div>
-          ))}
+      <div className="sticky top-[50vh] left-1/2 transform -translate-x-1/2 w-40 h-40 flex items-center justify-center">
+        <svg
+          className="absolute w-full h-full"
+          viewBox="0 0 160 160"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            {/* Define Arrow Marker */}
+            <marker
+              id="arrow"
+              markerWidth="10"
+              markerHeight="10"
+              refX="5"
+              refY="5"
+              orient="auto"
+            >
+              <path d="M0,0 L10,5 L0,10 Z" fill="green" />
+            </marker>
+          </defs>
 
-          {/* Four additional dots (top, right, bottom, left) */}
-          <div
-            className={`absolute top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full ${
-              highlightedStaticDots.top ? "bg-green-500" : "bg-red-500"
-            }`}
-          ></div>
-          <div
-            className={`absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 rounded-full ${
-              highlightedStaticDots.right ? "bg-green-500" : "bg-red-500"
-            }`}
-          ></div>
-          <div
-            className={`absolute bottom-3 left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full ${
-              highlightedStaticDots.bottom ? "bg-green-500" : "bg-red-500"
-            }`}
-          ></div>
-          <div
-            className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 rounded-full ${
-              highlightedStaticDots.left ? "bg-green-500" : "bg-red-500"
-            }`}
-          ></div>
+          {/* Dashed Circle Path */}
+          <path
+            d={`M 80,80
+                m ${circleRadius},0
+                a ${circleRadius},${circleRadius} 0 1,1 -${2 * circleRadius},0
+                a ${circleRadius},${circleRadius} 0 1,1 ${2 * circleRadius},0`}
+            stroke="lightgray"
+            strokeWidth="2"
+            fill="none"
+            strokeDasharray="10 5"
+          />
+
+          {/* Progress Path with Arrow */}
+          <path
+            d={`M 80,80
+                m ${circleRadius},0
+                a ${circleRadius},${circleRadius} 0 1,1 -${2 * circleRadius},0
+                a ${circleRadius},${circleRadius} 0 1,1 ${2 * circleRadius},0`}
+            stroke="green"
+            strokeWidth="2"
+            fill="none"
+            strokeDasharray={circleCircumference}
+            strokeDashoffset={(scrollProgress / 100) * circleCircumference}
+            markerEnd="url(#arrow)"
+            style={{
+              transition: "stroke-dashoffset 0.3s, stroke 0.3s",
+            }}
+          />
+        </svg>
+
+        <div className="absolute text-center">
+          <p className="text-xl font-bold">{Math.round(scrollProgress)}%</p>
+          <p className="text-sm">Scroll Progress</p>
         </div>
       </div>
     </div>

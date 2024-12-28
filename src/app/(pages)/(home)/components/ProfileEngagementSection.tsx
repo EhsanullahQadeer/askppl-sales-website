@@ -20,10 +20,10 @@ export default function ProfileEngagementSection() {
     // pt-9 sm:pt-[100px] pb-[30px] sm:pb-[72px]
     <div className="mx-5 sm:mx-[60px] lg:mx-[140px] ">
       <div className="mx-auto max-w-screen-2xl">
-        <div className="flex flex-wrap ">
+        <div className="flex flex-wrap">
           <div className="flex-1 max-lg:hidden">
             <div className="w-fit">
-              <div className=" bg-ironGray px-4 py-5 rounded-[22px] max-w-[310px] mx-auto relative">
+              <div className="bg-ironGray px-4 py-5 rounded-[22px] max-w-[310px] mx-auto relative">
                 <div className="flex justify-between items-center">
                   <span className="text-lightLime text-sm -tracking-[0.42px] leading-[100%]">
                     25 Remaining
@@ -54,51 +54,58 @@ export default function ProfileEngagementSection() {
                     Pay
                   </div>
                 </div>
-
-                {/* <div className="absolute top-[75px] left-1/2 -z-10 text-lightLime">
-              <PerpendicularImg />
-            </div> */}
               </div>
 
-              <div className=" mt-11 bg-ironGray px-4 py-5 rounded-[22px] max-w-[378px]">
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2 text-doveGray ">
-                    <div>
-                      <Image
-                        src={jadaImg}
-                        height={27}
-                        width={27}
-                        alt="jade"
-                        className="rounded-full"
-                      />
+              <div className="flex justify-center items-center rotate-90 h-11">
+                <hr className="w-11 border-t border-lightLime" />
+              </div>
+
+              <div className="flex relative">
+                <div className="bg-ironGray px-4 py-5 rounded-[22px] max-w-[378px]">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-2 text-doveGray">
+                      <div>
+                        <Image
+                          src={jadaImg}
+                          height={27}
+                          width={27}
+                          alt="jade"
+                          className="rounded-full"
+                        />
+                      </div>
+
+                      <div className="flex gap-1 items-center text-sm">
+                        <span className="text-white">Jada</span>
+                        <span>•</span>
+                        <span>17h Ago</span>
+                      </div>
                     </div>
 
-                    <div className="flex gap-1 items-center text-sm">
-                      <span className="text-white">Jada</span>
-                      <span>•</span>
-                      <span>17h Ago</span>
+                    <div className="text-white">
+                      <DotsVertical />
                     </div>
                   </div>
 
-                  <div className="text-white">
-                    <DotsVertical />
+                  <div className="mt-5 text-xl text-white leading-[140%] font-medium">
+                    What’s your trick for looking put- together on days you’re
+                    totally exhausted?
+                  </div>
+
+                  <div className="mt-6 text-sm text-doveGray leading-[140%] font-normal">
+                    How do you manage your time between creating content and
+                    your personal life? , or how do you build a community or
+                    audience.
                   </div>
                 </div>
 
-                <div className="mt-5 text-xl text-white leading-[140%] font-medium">
-                  What’s your trick for looking put- together on days you’re
-                  totally exhausted?
-                </div>
-
-                <div className="mt-6 text-sm text-doveGray leading-[140%] font-normal">
-                  How do you manage your time between creating content and your
-                  personal life? , or how do you build a community or audience.
+                <div className="absolute top-1/3 left-full -right-[60%] flex justify-center items-center -z-10">
+                  <hr className="w-full border-t border-lightLime" />
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="flex-[1.3]">
+          <div className="flex-[1.3] max-sm:max-h-[400px]">
             <Image
               className="mx-auto object-scale-down h-full w-full"
               src={mobileImg}
@@ -106,9 +113,9 @@ export default function ProfileEngagementSection() {
             />
           </div>
 
-          <div className="relative flex-1  max-sm:hidden">
+          <div className="relative flex-1 max-sm:hidden">
             <div className="absolute inset-0">
-              <div className="overflow-hidden h-full">
+              <div className="overflow-x-hidden h-full">
                 <Swiper
                   direction="vertical"
                   slidesPerView={5}
@@ -157,19 +164,19 @@ export default function ProfileEngagementSection() {
                         key={idx}
                       >
                         <div
-                          className={`flex origin-center items-center gap-5 rounded-full p-3.5 mx-auto bg-deep-space-gray transition-all duration-500 max-w-[294px] max-h-[96px]  ${
+                          className={`flex origin-center items-center gap-5 rounded-full p-3.5 mx-auto bg-deep-space-gray transition-all duration-500 max-w-[294px] max-h-[96px] ${
                             isActiveIdx
-                              ? " scale-100"
+                              ? "scale-100"
                               : isItemNextToActive
-                              ? " scale-[0.85]"
-                              : ` scale-[0.75]`
+                              ? "scale-[0.85]"
+                              : `scale-[0.75]`
                           }
                     `}
                         >
                           <div
                             className={`absolute duration-1000 -z-10 inset-0 rounded-full ease-in bg-linear-green-fade ${
                               isActiveIdx
-                                ? "opacity-100 transition-opacity "
+                                ? "opacity-100 transition-opacity"
                                 : "opacity-0 transition-none"
                             }`}
                           ></div>
@@ -192,6 +199,10 @@ export default function ProfileEngagementSection() {
                             <div className="mt-2.5 font-medium text-xs">
                               {description}
                             </div>
+                          </div>
+
+                          <div className={`absolute top-1/2 right-full -left-40 flex justify-center items-center -z-10 ${isActiveIdx ? "opacity-100" : "opacity-0"}`}>
+                            <hr className="w-full border-t border-lightLime" />
                           </div>
                         </div>
                       </SwiperSlide>
