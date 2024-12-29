@@ -73,7 +73,7 @@ const Page = () => {
             {blogsData.slice(0, 3).map((blog) => {
               return (
                 <Link
-                  href={`/blog/${blog.id}`}
+                  href={`/blogs/${blog.id}`}
                   key={blog.id}
                   className="flex-1"
                 >

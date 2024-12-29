@@ -50,7 +50,7 @@ const CreatorsThrive = () => {
         >
           {blogsData.map((blog, index) => (
             <SwiperSlide key={index}>
-              <Link href={`/blog/${blog.id}`} key={blog.id}>
+              <Link href={`/blogs/${blog.id}`} key={blog.id}>
                 <BlogCard blog={blog} />
               </Link>
             </SwiperSlide>
