@@ -1,7 +1,7 @@
 import StoryCardList from "./components/StoryCardList";
 import SearchField from "@/components/SearchField";
-import profileImagesFrame from "../../../assets/images/profile-images-frame.png";
-import packagesFrame from "../../../assets/images/packages-frame.png";
+import profileImagesFrame from "../../../assets/images/profile-images-frame.svg";
+import packagesFrame from "../../../assets/images/packages-frame.svg";
 import Image from "next/image";
 import "./styles/styles.css";
 
@@ -51,7 +51,7 @@ export default function StoriesLayout({
           <div
             className="backdrop-60 mt-10 sm:mt-[60px] mb-5 bg-forest rounded-[20px] border border-ghostWhite flex flex-col md:flex-row justify-between items-center gap-5 overflow-hidden"
           >
-            <div className="relative max-xl:hidden xl:pl-14">
+            <div className="relative max-xl:hidden">
               <Image
                 src={packagesFrame}
                 alt="packagesFrame"

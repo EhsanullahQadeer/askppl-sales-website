@@ -15,10 +15,6 @@ const EffortlessPayouts = () => {
       </div>
       <div className="mt-7 lg:mt-[75px]  relative">
         <Image className="w-full h-full object-cover" src={payout} alt="user" />
-
-        {/* <div className="absolute top-0 left-0 bg-vanishing-gray w-[25%] h-full"></div>
-
-        <div className="absolute top-0 right-0 bg-vanishing-gray w-[25%] h-full"></div> */}
       </div>
     </div>
   );
