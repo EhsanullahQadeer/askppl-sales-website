@@ -4,11 +4,11 @@ import ProfileMale from "@/assets/icons/ProfileMale";
 import QuestionAnswerIconSm from "@/assets/icons/QuestionAnswerIconSm";
 import DiscordOutline from "@/assets/icons/DiscordOutline";
 import TwitterIcon from "@/assets/icons/TwitterIcon";
-import FacebookIcon from "@/assets/icons/FacebookIcon";
 import YoutubeIcon from "@/assets/icons/YoutubeIcon";
 import LinkedinIcon from "@/assets/icons/LinkedinIcon";
 import logo from "../../../../assets/images/logo.svg";
 import Image from "next/image";
+import FacebookCircleIcon from "@/assets/icons/FacebookCircleIcon";
 
 const SweepstakesEnded = () => {
   return (
@@ -97,7 +97,7 @@ const SweepstakesEnded = () => {
               <TwitterIcon />
             </div>
             <div className="cursor-pointer">
-              <FacebookIcon />
+              <FacebookCircleIcon />
             </div>
             <div className="cursor-pointer">
               <YoutubeIcon />

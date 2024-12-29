@@ -1,4 +1,3 @@
-import FacebooksIcon from "@/assets/icons/FacebooksIcon";
 import InstaIcon from "@/assets/icons/InstaIcon";
 import TwittersIcon from "@/assets/icons/TwittersIcon";
 import React from "react";
@@ -7,6 +6,7 @@ import Link from "next/link";
 import { blogsData } from "../data/data";
 import Image from "next/image";
 import blogImg from "../../../../assets/images/blog-img1.png";
+import FacebookIcon from "@/assets/icons/FacebookIcon";
 
 const Page = () => {
   const blogData = {
@@ -53,13 +53,13 @@ const Page = () => {
             <div className="flex items-center font-medium gap-5">
               <span>Share:</span>
               <div className="flex items-center gap-3">
-                <span className="p-1.5 cursor-pointer rounded-full border border-mistWhite">
-                  <FacebooksIcon />
+                <span className="p-1.5 cursor-pointer rounded-full border border-mistWhite hover:bg-subtle-frost-gradient transition-colors">
+                  <FacebookIcon />
                 </span>
-                <span className="p-1.5 cursor-pointer rounded-full border border-mistWhite">
+                <span className="p-1.5 cursor-pointer rounded-full border border-mistWhite hover:bg-subtle-frost-gradient transition-colors">
                   <InstaIcon />
                 </span>
-                <span className="p-1.5 cursor-pointer rounded-full border border-mistWhite">
+                <span className="p-1.5 cursor-pointer rounded-full border border-mistWhite hover:bg-subtle-frost-gradient transition-colors">
                   <TwittersIcon />
                 </span>
               </div>

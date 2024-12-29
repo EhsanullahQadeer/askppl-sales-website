@@ -1,13 +1,13 @@
 import React from "react";
-import logo from "../../../../assets/images/askppl-logo.svg";
+import logo from "../assets/images/askppl-logo.svg";
 import Image from "next/image";
 import DiscordOutline from "@/assets/icons/DiscordOutline";
 import TwitterIcon from "@/assets/icons/TwitterIcon";
-import FacebookIcon from "@/assets/icons/FacebookIcon";
 import YoutubeIcon from "@/assets/icons/YoutubeIcon";
 import LinkedinIcon from "@/assets/icons/LinkedinIcon";
-import dotsBackground from "../../../../assets/images/group.png";
+import dotsBackground from "../assets/images/group.png";
 import Link from "next/link";
+import FacebookCircleIcon from "@/assets/icons/FacebookCircleIcon";
 
 const InfluenceSection = () => {
   return (
@@ -32,7 +32,7 @@ const InfluenceSection = () => {
               </div>
             </div>
 
-            <div className="bg-white text-dark p-4 rounded-2xl text-lg font-bold cursor-pointer">
+            <div className="bg-white text-dark p-4 rounded-2xl text-lg font-bold cursor-pointer hover:bg-translucentWhite hover:text-black transition-all">
               Download app
             </div>
           </div>
@@ -51,20 +51,35 @@ const InfluenceSection = () => {
             </div>
 
             <div className="flex items-center gap-8">
-              <Link href="">
+              <Link
+                href=""
+                className="text-milkyFog hover:text-translucentWhite transition-colors"
+              >
                 <DiscordOutline />
               </Link>
 
-              <Link href="">
+              <Link
+                href=""
+                className="text-milkyFog hover:text-translucentWhite transition-colors"
+              >
                 <TwitterIcon />
               </Link>
-              <Link href="">
-                <FacebookIcon />
+              <Link
+                href=""
+                className="text-milkyFog hover:text-translucentWhite transition-colors"
+              >
+                <FacebookCircleIcon />
               </Link>
-              <Link href="">
+              <Link
+                href=""
+                className="text-milkyFog hover:text-translucentWhite transition-colors"
+              >
                 <YoutubeIcon />
               </Link>
-              <Link href="">
+              <Link
+                href=""
+                className="text-milkyFog hover:text-translucentWhite transition-colors"
+              >
                 <LinkedinIcon />
               </Link>
             </div>

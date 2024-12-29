@@ -17,9 +17,7 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Links Section */}
             <div className="flex gap-5 max-sm:flex-wrap">
-              {/* Quick Links */}
               <div className="w-[150px] xl:w-[200px] flex flex-col gap-4 sm:gap-5">
                 <h3 className="text-white text-base xl:text-lg font-medium">
                   Quick Links
@@ -59,11 +57,13 @@ const Footer = () => {
           </div>
 
           <div className="mt-10 sm:mt-20 border-t border-mistWhite pt-6 sm:pt-5 flex max-sm:flex-col flex-wrap justify-between sm:items-center gap-5 text-base">
-            <div className="order-2 sm:order-1">© 2024 ASKPPL. All Rights Reserved.</div>
+            <div className="order-2 sm:order-1">
+              © 2024 ASKPPL. All Rights Reserved.
+            </div>
             <div className="flex gap-2.5 order-1 sm:order-2">
-              <a href="#">Terms of Service</a>
+              <a href="#" className="hover:text-white">Terms of Service</a>
               <span>|</span>
-              <a href="#">Privacy Policy</a>
+              <a href="#" className="hover:text-white">Privacy Policy</a>
             </div>
           </div>
         </div>

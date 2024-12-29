@@ -73,7 +73,7 @@ export default function StoriesLayout({
                 expertise while connecting with a loyal audience.
               </p>
 
-              <div className="p-4 w-max rounded-2xl bg-white text-dark text-lg font-bold cursor-pointer">
+              <div className="p-4 w-max rounded-2xl bg-white text-dark text-lg font-bold cursor-pointer hover:bg-translucentWhite hover:text-black transition-all">
                 Create Your Profile Now
               </div>
             </div>
