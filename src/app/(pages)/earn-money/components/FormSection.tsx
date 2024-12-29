@@ -113,7 +113,7 @@ const FormSection = (props: IProps) => {
                 </div>
               ) : (
                 <div className="m-6 sm:m-8 flex flex-col gap-5">
-                  <div className="flex gap-5 flex-wrap">
+                  <div className="flex gap-5 sm:flex-row flex-col ">
                     <FormikInputField
                       {...{
                         name: "name",
