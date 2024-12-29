@@ -1,8 +1,7 @@
 import Image from "next/image";
 import React from "react";
-// import license from "../../../../assets/images/license.png";
-import propertyLicense from "../../../../assets/images/property-license.png";
-import identityCard from "../../../../assets/images/identity-card.png";
+import propertyLicense from "../../../../assets/images/property-license.svg";
+import identityCard from "../../../../assets/images/identityFrae.svg";
 
 const Verification = () => {
   return (

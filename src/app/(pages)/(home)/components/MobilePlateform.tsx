@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mobile from "../../../../assets/images/iPhone 15.png";
+import mobile from "../../../../assets/images/iPhone 15.svg";
 
 const MobilePlateform = () => {
   return (
@@ -15,7 +15,7 @@ const MobilePlateform = () => {
 
         <div className="flex justify-center items-center">
           <Image
-            className="w-full rounded-t-3xl h-full object-cover"
+            className="w-full rounded-t-3xl h-full object-cover px-[8%]"
             src={mobile}
             alt="user"
           />

@@ -5,8 +5,7 @@ import { QAPurchasedData } from "../lib/data/data";
 import TextSquare from "@/assets/icons/TextSquare";
 import Image from "next/image";
 import jadaImg from "../../../../assets/images/jadaImg.png";
-import mobileImg from "../../../../assets/images/mobile-card-img.png";
-// import PerpendicularImg from "@/assets/icons/PerpendicularImg";
+import mobileImg from "../../../../assets/images/mobile-card-img.svg";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -17,11 +16,10 @@ export default function ProfileEngagementSection() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   return (
-    // pt-9 sm:pt-[100px] pb-[30px] sm:pb-[72px]
     <div className="mx-5 sm:mx-[60px] lg:mx-[140px] ">
       <div className="mx-auto max-w-screen-2xl">
         <div className="flex flex-wrap">
-          <div className="flex-1 max-lg:hidden">
+          <div className="flex-1 max-lg:hidden pr-9">
             <div className="w-fit">
               <div className="bg-ironGray px-4 py-5 rounded-[22px] max-w-[310px] mx-auto relative">
                 <div className="flex justify-between items-center">
@@ -113,16 +111,18 @@ export default function ProfileEngagementSection() {
             />
           </div>
 
-          <div className="relative flex-1 max-sm:hidden">
+          <div className="relative flex-1  max-sm:hidden  pl-9">
             <div className="absolute inset-0">
-              <div className="overflow-x-hidden h-full">
+              <div className="overflow-x-hidden h-full pl-9">
+                <div className="h-[1px] top-[calc(50%-20px)] lg:top-[calc(50%-8px)] -z-10 -left-2 w-1/4 bg-lightLime  absolute"></div>
+
                 <Swiper
                   direction="vertical"
                   slidesPerView={5}
                   centeredSlides={true}
                   centeredSlidesBounds={true}
                   autoplay={{
-                    delay: 2000,
+                    delay: 4000,
                   }}
                   breakpoints={{
                     0: { slidesPerView: 3 },

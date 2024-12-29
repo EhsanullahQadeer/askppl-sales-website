@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import network from "../../../../assets/images/About-people.png";
+import network from "../../../../assets/images/About-people.svg";
 
 const AboutPeople = () => {
   return (

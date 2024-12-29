@@ -40,9 +40,9 @@ const EarningPath = () => {
             <div className="sticky  top-0 z-20 h-screen flex justify-center items-center">
               <div className="absolute top-0 h-screen w-full">
                 <div className="flex justify-center flex-col relative h-screen w-full">
-                  {/* <h2 className="page-heading mb-4">
+                  <h2 className="page-heading !text-4xl  mt-3">
                     Your path to earning <br /> with ASKPPL
-                  </h2> */}
+                  </h2>
                   <CircularDynamicSvg
                     {...{ circleRadius, circleCircumference, scrollProgress }}
                   >

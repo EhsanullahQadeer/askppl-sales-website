@@ -42,6 +42,13 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
 
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const isVisible = entries.some((entry) => entry.isIntersecting);
@@ -53,16 +60,12 @@ const Header = () => {
     // Observe specified sections
     sectionIdsToHide.forEach((id) => {
       const section = document.getElementById(id);
-      console.log("section: ", section);
       if (section) observer.observe(section);
     });
-
     return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
       observer.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";

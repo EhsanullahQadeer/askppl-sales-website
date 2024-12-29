@@ -1,5 +1,5 @@
 import Image from "next/image";
-import gradient from "../../../../assets/images/earn-followers-gradient.png";
+import gradient from "../../../../assets/images/earn-followers-gradient.svg";
 
 const EarnEffortless = () => {
   return (
