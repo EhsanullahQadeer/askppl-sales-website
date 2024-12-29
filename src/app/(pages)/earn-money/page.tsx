@@ -4,8 +4,16 @@ import StepsToWinSection from "./components/StepsToWinSection";
 import InfluenceSection from "./components/InfluenceSection";
 import QuestionSection from "./components/QuestionSection";
 import SweepstakesEnded from "./components/SweepstakesEnded";
+interface SearchParams {
+  type?: string;
+}
 
-const Page = () => {
+const Page = async ({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>;
+}) => {
+  const { type } = await searchParams;
   return (
     <div className="pt-[60px] sm:pt-24">
       <div className="max-w-[610px] mx-auto max-sm:px-9">
@@ -23,12 +31,12 @@ const Page = () => {
 
       <div className="mx-5">
         <div className="mt-[86px] sm:mt-[62px] max-w-3xl mx-auto">
-          {false ? (
+          {type === "answere" ? (
             <SweepstakesEnded />
           ) : (
             <>
               <QuestionSection />
-              <FormSection />
+              <FormSection type={type} />
             </>
           )}
         </div>
@@ -47,8 +55,8 @@ const Page = () => {
         className="px-5 sm:px-[60px] lg:px-[140px] bg-cover bg-bottom"
       >
         <div className="py-[30px] sm:py-[100px] mx-auto max-w-screen-2xl"> */}
-          <InfluenceSection />
-        {/* </div>
+      <InfluenceSection />
+      {/* </div>
       </div> */}
     </div>
   );

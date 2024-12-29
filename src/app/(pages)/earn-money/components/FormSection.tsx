@@ -13,7 +13,7 @@ import TwitterIcon from "@/assets/icons/TwitterIcon";
 import FacebookIcon from "@/assets/icons/FacebookIcon";
 import YoutubeIcon from "@/assets/icons/YoutubeIcon";
 import LinkedinIcon from "@/assets/icons/LinkedinIcon";
-import logo from "../../../../assets/images/askppl-logo.png";
+import logo from "../../../../assets/images/askppl-logo.svg";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Please fill out this field"),
@@ -24,7 +24,12 @@ const validationSchema = Yup.object({
   answer: Yup.string().required("Please fill out this field"),
 });
 
-const FormSection = () => {
+interface IProps {
+  type?: string;
+}
+const FormSection = (props: IProps) => {
+  const {type} = props;
+
   const [formSubmit, setFormSubmit] = useState<boolean>(false);
 
   const initialValues: IFormValues = {
@@ -59,7 +64,7 @@ const FormSection = () => {
                 </span>
               </div>
 
-              {formSubmit ? (
+              {formSubmit ||type==="success"  ? (
                 <div className="my-[74px] max-sm:mt-10 max-sm:mb-5 max-w-md mx-auto flex flex-col justify-center items-center">
                   <div className="w-[315px] flex flex-col justify-center items-center">
                     <SubmitIcon />

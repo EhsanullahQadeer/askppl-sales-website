@@ -1,18 +1,21 @@
 "use client";
 import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
-import logo from "../assets/images/askppl-logo.png";
+import logo from "../assets/images/askppl-logo.svg";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import MenuIcon from "@/assets/icons/MenuIcon";
 import CancelIcon from "@/assets/icons/CancelIcon";
 
 const menuItems = [
-  { label: "Home", link: "" },
+  { label: "Home", link: "/" },
   { label: "Stories", link: "stories" },
   { label: "Blog", link: "blogs" },
   { label: "Win Prizes", link: "earn-money" },
   { label: "Contact", link: "contactus" },
+  { label: "Install", link: "install" },
+  { label: "Win Answere", link: "earn-money?type=answere" },
+  { label: "Win Success", link: "earn-money?type=success" },
 ];
 
 const sectionIdsToHide: string[] = ["earning-path-sec"];
@@ -25,6 +28,10 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isDisableSection, setIsDisableSection] = useState(false);
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const queryString = searchParams.toString();
+
+  const fullPath = `${pathname}${queryString ? "?" : ""}${queryString}`;
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
@@ -109,11 +116,13 @@ const Header = () => {
     >
       <div className="mx-5 sm:mx-[60px] lg:mx-[140px]">
         <div className="mx-auto max-w-screen-2xl flex justify-between items-center py-5 md:text-base text-sm">
-          <Image
-            className="md:w-[120px] w-[100px] object-cover"
-            src={logo}
-            alt="logo"
-          />
+          <Link href="/">
+            <Image
+              className="md:w-[120px] w-[100px] object-cover"
+              src={logo}
+              alt="logo"
+            />
+          </Link>
 
           <div
             className={`fixed top-20 inset-0 bg-black bg-opacity-50 transition-all duration-500 ${
@@ -138,7 +147,9 @@ const Header = () => {
                   href={`/${link}`}
                   onClick={() => setMenuOpen(false)}
                   className={`sm:border-none border-froastedWhite sm:py-0 py-4 sm:px-0 px-2.5 max-sm:text-white hover:text-white transition ${
-                    pathname === `/${link}` ? "text-white" : "text-softWhite"
+                    (fullPath.includes(`/${link}`) && link) || link === pathname
+                      ? "text-white"
+                      : "text-softWhite"
                   } ${isLastItem ? "border-none" : "border-b"}`}
                 >
                   {label}

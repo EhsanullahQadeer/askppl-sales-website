@@ -1,7 +1,7 @@
 import DownloadIcon from "@/assets/icons/DownloadIcon";
 import Image from "next/image";
 import React from "react";
-import logo from "../../../../assets/images/logo.png";
+import logo from "../../../../assets/images/logo.svg";
 
 const InstallHeader = () => {
   return (

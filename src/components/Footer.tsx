@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../assets/images/askppl-logo.png";
+import logo from "../assets/images/askppl-logo.svg";
 
 const Footer = () => {
   return (

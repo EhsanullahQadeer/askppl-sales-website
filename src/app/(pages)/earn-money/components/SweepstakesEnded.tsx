@@ -7,7 +7,7 @@ import TwitterIcon from "@/assets/icons/TwitterIcon";
 import FacebookIcon from "@/assets/icons/FacebookIcon";
 import YoutubeIcon from "@/assets/icons/YoutubeIcon";
 import LinkedinIcon from "@/assets/icons/LinkedinIcon";
-import logo from "../../../../assets/images/logo.png";
+import logo from "../../../../assets/images/logo.svg";
 import Image from "next/image";
 
 const SweepstakesEnded = () => {
