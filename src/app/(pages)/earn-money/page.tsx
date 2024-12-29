@@ -4,7 +4,6 @@ import StepsToWinSection from "./components/StepsToWinSection";
 import InfluenceSection from "./components/InfluenceSection";
 import QuestionSection from "./components/QuestionSection";
 import SweepstakesEnded from "./components/SweepstakesEnded";
-import { wait } from "@/lib/wait";
 interface SearchParams {
   type?: string;
 }
@@ -14,8 +13,6 @@ const Page = async ({
 }: {
   searchParams: Promise<SearchParams>;
 }) => {
-  await wait(3000);
-
   const { type } = await searchParams;
   return (
     <div className="pt-[60px] sm:pt-24">
