@@ -15,8 +15,12 @@ const menuItems = [
   { label: "Contact", link: "contactus" },
 ];
 
+const sectionIdsToHide: string[] = ["earning-path-sec"];
+
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [shadowOpacity, setShadowOpacity] = useState(0);
+  const [hideHeader, setHideHeader] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -28,12 +32,35 @@ const Header = () => {
       }
     }
   };
+  const handleScroll = () => {
+    const opacity = Math.min(window.scrollY / 2000, 0.6);
+    setShadowOpacity(opacity);
+  };
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
+    window.addEventListener("scroll", handleScroll);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const isVisible = entries.some((entry) => entry.isIntersecting);
+        setHideHeader(isVisible);
+      },
+      { threshold: 0.15 }
+    );
+
+    // Observe specified sections
+    sectionIdsToHide.forEach((id) => {
+      const section = document.getElementById(id);
+      console.log("section: ", section);
+      if (section) observer.observe(section);
+    });
+
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
     };
   }, []);
 
@@ -45,7 +72,14 @@ const Header = () => {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-dark">
+    <header
+      style={{
+        boxShadow: `0 8px 16px rgba(0, 0, 0, ${shadowOpacity})`,
+      }}
+      className={`sticky top-0 z-50 bg-dark transition-all duration-500 ${
+        hideHeader ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <div className="mx-5 sm:mx-[60px] lg:mx-[140px]">
         <div className="mx-auto max-w-screen-2xl flex justify-between items-center py-5 md:text-base text-sm">
           <Image

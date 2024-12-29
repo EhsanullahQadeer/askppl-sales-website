@@ -33,7 +33,7 @@ const EarningPath = () => {
 
   const step = Math.ceil(scrollProgress / 25);
   return (
-    <div className="mx-5 sm:mx-6">
+    <div className="mx-5 sm:mx-6" id="earning-path-sec">
       <div className="max-w-screen-3xl mx-auto">
         <div className="px-10 bg-dim-horizon-gradient rounded-3xl">
           <div ref={containerRef} className="h-[500vh] relative">
