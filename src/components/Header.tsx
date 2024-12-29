@@ -13,9 +13,6 @@ const menuItems = [
   { label: "Blog", link: "blogs" },
   { label: "Win Prizes", link: "earn-money" },
   { label: "Contact", link: "contactus" },
-  { label: "Install", link: "install" },
-  { label: "Win Answere", link: "earn-money?type=answere" },
-  { label: "Win Success", link: "earn-money?type=success" },
 ];
 
 const sectionIdsToHide: string[] = ["earning-path-sec"];

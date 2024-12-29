@@ -22,12 +22,12 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_355_4556" result="shape"/>
 </filter>
 <linearGradient id="paint0_linear_355_4556" x1="0" y1="91.5" x2="488" y2="91.5" gradientUnits="userSpaceOnUse">
-<stop stop-color="#85D421"/>
-<stop offset="0.175" stop-color="#2FC373"/>
-<stop offset="0.365" stop-color="#34C2EE"/>
-<stop offset="0.565" stop-color="#434AE8"/>
-<stop offset="0.765" stop-color="#9C35EC"/>
-<stop offset="1" stop-color="#FF2983"/>
+<stop stopColor="#85D421"/>
+<stop offset="0.175" stopColor="#2FC373"/>
+<stop offset="0.365" stopColor="#34C2EE"/>
+<stop offset="0.565" stopColor="#434AE8"/>
+<stop offset="0.765" stopColor="#9C35EC"/>
+<stop offset="1" stopColor="#FF2983"/>
 </linearGradient>
 </defs>
 </svg>
