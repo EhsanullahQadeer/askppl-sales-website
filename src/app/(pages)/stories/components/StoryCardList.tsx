@@ -6,22 +6,45 @@ import RightIcon from "@/assets/icons/RightIcon";
 import VerifiedIcon from "@/assets/icons/VerifiedIcon";
 import { sliderItems } from "../data/data";
 import Link from "next/link";
-import { TstoryId } from "./types";
+import { SlideItem, TstoryId } from "./types";
 import { useParams } from "next/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { useEffect, useMemo, useRef, useState } from "react";
+import arrangeSlides from "../lib/helpers/arrangeStorySlides";
 
 function StoryCardList() {
   const params = useParams();
   const storyId = params.storyId as TstoryId;
+  const { centerIndex, updatedSlides } = useMemo(() => {
+    return arrangeSlides(sliderItems, Number(storyId) || 1);
+  }, [storyId]);
+  const [slides, setSlides] = useState<SlideItem[]>(updatedSlides);
+  const swiperRef = useRef<SwiperClass>(null);
+  const activeSlideIdRef = useRef(storyId);
+
+  const centerSelectedSlide = (selectedId: number) => {
+    activeSlideIdRef.current = selectedId;
+    const { updatedSlides, centerIndex } = arrangeSlides(slides, selectedId);
+    swiperRef.current?.slideTo(centerIndex, 300);
+
+    if (updatedSlides) setSlides(updatedSlides);
+  };
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.update();
+    }
+  }, [slides]);
 
   return (
     <div className="w-full text-white">
       <div className="relative w-full">
         <Swiper
           modules={[Navigation]}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
           slidesPerView="auto"
           spaceBetween={16}
           navigation={{
@@ -29,19 +52,27 @@ function StoryCardList() {
             nextEl: ".button-next",
           }}
           className="max-sm:!px-2.5"
+          centeredSlides={true}
+          centeredSlidesBounds={true}
+          slideToClickedSlide={true}
+          initialSlide={centerIndex}
         >
-          {sliderItems.map((slide) => (
+          {slides.map((slide) => (
             <SwiperSlide
               key={slide.id}
               style={{ width: "auto" }}
               className="flex-shrink-0"
             >
-              <Link href={`/stories/${slide.id}`} passHref>
+              <Link
+                onClick={() => centerSelectedSlide(slide.id)}
+                href={`/stories/${slide.id}`}
+                passHref
+              >
                 <div
                   className={`flex-shrink-0 w-[105px] sm:w-[152px] h-36 sm:h-[186px] flex flex-col items-center justify-between gap-3 sm:gap-5 cursor-pointer rounded-[20px] px-3 py-4 sm:px-2 sm:py-6 transition-all duration-300 border ${
                     (
-                      storyId
-                        ? storyId == slide.id
+                      activeSlideIdRef.current
+                        ? activeSlideIdRef.current == slide.id
                         : sliderItems[0].id === slide.id
                     )
                       ? "bg-glass-white-gradient border-ghostWhite"

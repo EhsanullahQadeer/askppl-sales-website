@@ -19,7 +19,6 @@ const BlogsSkeletonWrapper = (props: Props) => {
   console.log("otherRows : " + otherRows);
   return (
     <div className="grid grid-cols-1 gap-y-10">
-      let otherRows=
       <div className="flex flex-wrap gap-y-10 gap-x-4">
         {firstRow.map((item) => {
           return (

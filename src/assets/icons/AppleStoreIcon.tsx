@@ -12,8 +12,8 @@ const AppleStoreIcon = () => {
   </g>
   <defs>
     <linearGradient id="paint0_linear_375_3807" x1="10" y1="0" x2="10" y2="19.9975" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#00BFFC"/>
-      <stop offset="1" stop-color="#0073F6"/>
+      <stop stopColor="#00BFFC"/>
+      <stop offset="1" stopColor="#0073F6"/>
     </linearGradient>
     <clipPath id="clip0_375_3807">
       <rect width="20" height="20" fill="white"/>

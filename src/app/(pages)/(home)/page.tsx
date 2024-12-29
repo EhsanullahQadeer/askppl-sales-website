@@ -7,7 +7,7 @@ import ProfileEngagementSection from "./components/ProfileEngagementSection";
 import "./styles/styles.scss";
 import EarningPath from "./components/EarningPath";
 
-export default function Home() {
+export default function  Home() {
   return (
     <>
       <div className="pt-12 z-20 pb-8 flex gap-2 flex-col justify-center items-center">

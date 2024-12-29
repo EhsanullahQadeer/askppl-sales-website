@@ -1,5 +1,5 @@
 import Skeleton, { SkeletonProps } from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+
 
 interface IProps extends SkeletonProps {
   classes?: string;
