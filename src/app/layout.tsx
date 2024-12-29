@@ -5,6 +5,7 @@ import "../styles/global-syles.css";
 import "../styles/swiper-styles.scss";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { Suspense } from "react";
 
 const aeonik = localFont({
   src: [
@@ -73,7 +74,9 @@ export default function RootLayout({
       <body
         className={`${aeonik.variable} ${neueMontreal.variable} antialiased bg-dark text-white`}
       >
-        <Header />
+        <Suspense fallback={null}>
+          <Header />
+        </Suspense>
         {children}
         <Footer />
       </body>
