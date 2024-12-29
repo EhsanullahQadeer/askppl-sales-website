@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "../styles/global-syles.css";
 import "../styles/swiper-styles.scss";
+import "../styles/laoder-styles.scss";
+import "react-loading-skeleton/dist/skeleton.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Suspense } from "react";
