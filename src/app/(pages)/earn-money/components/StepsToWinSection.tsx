@@ -24,7 +24,7 @@ const stepsArr = [
 const StepsToWinSection = () => {
   return (
     <div>
-      <div className="max-w-[610px] mx-auto max-sm:px-9">
+      <div className="max-w-[560px] mx-auto max-sm:px-9">
         <h1 className="text-3xl sm:text-6xl text-center font-medium">
           How to win
         </h1>
@@ -37,7 +37,7 @@ const StepsToWinSection = () => {
           return (
             <div
               key={title + idx}
-              className="backdrop-60 p-5 sm:p-8 flex flex-col gap-8 sm:gap-[58px] rounded-20 border border-ghostWhite bg-transparent-white-haze flex-1 min-w-80"
+              className="backdrop-60 p-5 sm:p-8 flex flex-col gap-8 sm:gap-[58px] rounded-20 border border-ghostWhite bg-transparent-white-haze flex-1 min-w-full sm:min-w-80"
             >
               <div className="w-[60px] h-[60] sm:w-20 sm:h-20 p-[18px] flex justify-center items-center rounded-full bg-linear-black-fade text-lightLime shadow-faint-greenish-shadow backdrop-16">
                 {icon}
