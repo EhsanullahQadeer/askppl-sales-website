@@ -35,14 +35,14 @@ const EarningPath = () => {
   return (
     <div className="mx-5 sm:mx-6">
       <div className="max-w-screen-3xl mx-auto">
-        <div className=" px-32   rounded-3xl">
+        <div className="px-10 bg-dim-horizon-gradient rounded-3xl">
           <div ref={containerRef} className="h-[500vh] relative">
             <div className="sticky  top-0 z-20 h-screen flex justify-center items-center">
               <div className="absolute top-0 h-screen w-full">
-                <div className="flex justify-center flex-col relative h-screen w-full py-8">
-                  <h2 className="page-heading mb-4">
+                <div className="flex justify-center flex-col relative h-screen w-full">
+                  {/* <h2 className="page-heading mb-4">
                     Your path to earning <br /> with ASKPPL
-                  </h2>
+                  </h2> */}
                   <CircularDynamicSvg
                     {...{ circleRadius, circleCircumference, scrollProgress }}
                   >
@@ -58,8 +58,8 @@ const EarningPath = () => {
                       </g>
                     </g> */}
                     <g>
-                      <foreignObject x="48" y="48" width="100" height="100">
-                        <div className="relative h-full w-full p-5">
+                      <foreignObject x="34" y="33" width="102" height="102">
+                        <div className="relative h-full w-full">
                           <div className="absolute inset-0 flex justify-center items-center flex-col">
                             <EarningPathData step={step} />
                           </div>
@@ -67,11 +67,11 @@ const EarningPath = () => {
                       </foreignObject>
                     </g>
 
-                    <g>
-                      <g transform="translate(51, 51)">
+                    <foreignObject x="0" y="0" width="100%" height="100%">
+                      <div className="relative h-full w-full flex justify-center items-center">
                         <PathEarnCircularRing />
-                      </g>
-                    </g>
+                      </div>
+                    </foreignObject>
 
                     <DynamicStepComponent {...{ step }} />
                   </CircularDynamicSvg>

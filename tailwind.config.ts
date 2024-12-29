@@ -51,6 +51,8 @@ export default {
         eclipseGray: "#262626",
         amber: "#3F3F3F",
         graphite: "#414141",
+        vantaBlack: "#232222",
+        stealth: "#2E2D2D",
         hazyPearl: "rgba(255, 255, 255, 0.42)",
         mistWhite: "rgba(255, 255, 255, 0.10)",
         froastedWhite: "rgba(255, 255, 255, 0.16)",

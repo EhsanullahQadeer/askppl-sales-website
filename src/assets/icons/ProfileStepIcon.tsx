@@ -5,8 +5,8 @@ const ProfileStepIcon = (props:ShareStepIconProps) => {
   return (
     <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="12"
-    height="12"
+    width="6"
+    height="6"
     viewBox="0 0 25 24"
     fill="none"
     {...props}

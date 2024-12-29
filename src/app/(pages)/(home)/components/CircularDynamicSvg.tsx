@@ -12,12 +12,12 @@ const CircularDynamicSvg = (props: IProps) => {
   return (
     <svg
       className=""
-      viewBox="0 0 200 200"
+      viewBox="0 0 170 170"
       preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d={`M 100,100
+        d={`M 85,85
 m ${circleRadius},0
 a ${circleRadius},${circleRadius} 0 1,1 -${2 * circleRadius},0
 a ${circleRadius},${circleRadius} 0 1,1 ${2 * circleRadius},0`}
@@ -29,7 +29,7 @@ a ${circleRadius},${circleRadius} 0 1,1 ${2 * circleRadius},0`}
       />
       {/* Progress Path */}
       <path
-        d={`M 100,100
+        d={`M 85,85
 m ${circleRadius},0
 a ${circleRadius},${circleRadius} 0 1,1 -${2 * circleRadius},0
 a ${circleRadius},${circleRadius} 0 1,1 ${2 * circleRadius},0`}

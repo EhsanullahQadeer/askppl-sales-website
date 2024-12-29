@@ -87,3 +87,27 @@ export const incomeData = [
   { followers: 1000000, income: 15000 },
   { followers: 5000000, income: 100000 },
 ];
+
+export const earningPathStepsData = [
+  {
+    step: 1,
+    title: "Share your personalized ASKPPL link",
+    description:
+      "After setting up your profile, share your personalized ASKPPL link with your followers across all platforms. This link acts as your direct channel for paid Q&A interactions.",
+  },
+  {
+    step: 2,
+    title: "Receive questions and engage",
+    description: "You can receive questions from them and then give answers.",
+  },
+  {
+    step: 3,
+    title: "Earn money seamlessly",
+    description: "This can make money for you.",
+  },
+  {
+    step: 4,
+    title: "Sign up and set your profile",
+    description: "Sign up and make your profile on AskPPl app.",
+  },
+];
