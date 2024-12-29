@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import logo from "../assets/images/askppl-logo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,11 +16,14 @@ const menuItems = [
 ];
 
 const sectionIdsToHide: string[] = ["earning-path-sec"];
+const hiddenRoutes = ["/install"];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [shadowOpacity, setShadowOpacity] = useState(0);
   const [hideHeader, setHideHeader] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isDisableSection, setIsDisableSection] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -32,26 +35,43 @@ const Header = () => {
       }
     }
   };
-  const handleScroll = () => {
+
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    const scrollUpThreshold = 50; // Threshold to consider scroll as "up"
+
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      setHideHeader(true); // Scroll down: hide header
+    } else if (
+      currentScrollY < lastScrollY &&
+      currentScrollY > scrollUpThreshold &&
+      !isDisableSection
+    ) {
+      setHideHeader(false); // Scroll up: show header
+    }
+
+    // Update the last scroll position
+    setLastScrollY(currentScrollY);
+
     const opacity = Math.min(window.scrollY / 2000, 0.6);
     setShadowOpacity(opacity);
-  };
+  }, [isDisableSection, lastScrollY]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll, lastScrollY]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const isVisible = entries.some((entry) => entry.isIntersecting);
+        setIsDisableSection(isVisible);
         setHideHeader(isVisible);
       },
       { threshold: 0.15 }
@@ -73,6 +93,10 @@ const Header = () => {
       document.body.style.overflow = "auto";
     };
   }, [menuOpen]);
+
+  if (hiddenRoutes.includes(pathname)) {
+    return null;
+  }
 
   return (
     <header

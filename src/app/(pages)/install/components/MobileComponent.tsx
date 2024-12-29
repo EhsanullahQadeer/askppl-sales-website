@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mobileCardPic from "../../../../assets/images/mobile-card-img.png";
+import mobileCardPic from "../../../../assets/images/mobile-card-install.svg";
 import ImagesSlider from "@/components/ImagesSlider";
 import AppleStoreIcon from "@/assets/icons/AppleStoreIcon";
 import PlayStoreIcon from "@/assets/icons/PlayStoreIcon";
@@ -18,15 +18,15 @@ const MobileComponent = () => {
   const imagesArr = MobileCardData.map((item) => item.image);
   return (
     <>
-      <div className="flex flex-col max-lg:items-center lg:flex-row gap-5 lg:gap-4">
-        <div className="w-[335px] lg:[474px] h-[400px] lg:h-[552px] relative pt-[36px] pb-5 px-[30px] sm:px-[41px] rounded-20 border border-ghostWhite bg-vanishing-light-gradient">
+      <div className="flex flex-col max-lg:items-center lg:flex-row gap-4 lg:gap-8">
+        <div className="w-full sm:w-[405px] lg:[474px] h-[400px] lg:h-[552px] relative pt-[36px] pb-5 px-[30px] sm:px-[1.5%] rounded-20 border border-ghostWhite bg-vanishing-light-gradient">
           <ImagesSlider
             {...{
               sliderItems: imagesArr,
               paginationBtnPosition: "0px",
               paginationBtnHeight: "4px",
               backgroundGradient: "bg-subtle-dark-fade",
-              imageObjectFit: "object-fill",
+              imageObjectFit: "object-contain",
             }}
           />
 
@@ -34,7 +34,7 @@ const MobileComponent = () => {
         </div>
 
         <div className="flex-1 flex flex-col gap-4">
-          <div className="sm:p-[40px] p-5 border rounded-[20px] border-ghostWhite bg-grey">
+          <div className="p-5 border rounded-[20px] border-ghostWhite bg-grey">
             <div className="flex items-center lg:justify-start gap-[10px] mb-[24px]">
               <StarRating rating={rating} />
               <span className="text-sm text-softWhite">•</span>
