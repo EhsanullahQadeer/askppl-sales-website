@@ -12,7 +12,6 @@ const CircularDynamicSvg = (props: IProps) => {
   const { children, circleRadius, circleCircumference, scrollProgress,isInView } = props;
   return (
     <svg
-      className=""
       viewBox="0 0 170 170"
       preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +28,8 @@ a ${circleRadius},${circleRadius} 0 1,1 ${2 * circleRadius},0`}
         strokeLinecap="round"
       />
       {/* Progress Path */}
-      <path
+      {/* <path
+      
         d={`M 85,85
 m ${circleRadius},0
 a ${circleRadius},${circleRadius} 0 1,1 -${2 * circleRadius},0
@@ -43,8 +43,26 @@ a ${circleRadius},${circleRadius} 0 1,1 ${2 * circleRadius},0`}
         }
         style={{
           transition: isInView ? "stroke-dashoffset 2.5s, stroke 2.5s" : "",
+          
         }}
-      />
+      /> */}
+      <path
+  d={`M 85,85
+    m 0,${-circleRadius}
+    a ${circleRadius},${circleRadius} 0 1,1 0,${2 * circleRadius}
+    a ${circleRadius},${circleRadius} 0 1,1 0,-${2 * circleRadius}`}
+  className="stroke-lightLime"
+  strokeWidth="0.5"
+  fill="none"
+  strokeDasharray={circleCircumference}
+  strokeDashoffset={
+    circleCircumference - (scrollProgress / 100) * circleCircumference
+  }
+  style={{
+    transition: isInView ? "stroke-dashoffset 2.5s, stroke 2.5s" : "",
+  }}
+/>
+
       {children}
     </svg>
   );

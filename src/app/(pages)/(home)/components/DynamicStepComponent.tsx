@@ -34,36 +34,53 @@ const DynamicStepComponent = (props: Iprops) => {
     step >= count ? "text-white" : "text-white/50";
   return (
     <g fill="green">
+      <g transform="translate(92, 30)">
+        <foreignObject x="-19" y="-31" width="40" height="20">
+          <p
+            className={`${textColor(
+              1
+            )} text-[4px] text-center inline-block max-w-24 leading-tight`}
+          >
+            Sign up and set <br /> up your profile
+          </p>
+        </foreignObject>
+
+        <RoundedStepSquare count={1} />
+        <g transform="translate(-9, -9)">
+          <ProfileStepIcon strokeOpacity={iconOpacity(1)} />
+        </g>
+      </g>
+
       <g transform="translate(151, 91)">
         <foreignObject x="2" y="-18" width="40" height="20">
           <p
             className={`${textColor(
-              1
+              2
             )} text-[4px] text-center inline-block max-w-24 leading-tight`}
           >
             Share your <br /> ASKPPL Link
           </p>
         </foreignObject>
 
-        <RoundedStepSquare count={1} />
+        <RoundedStepSquare count={2} />
         <g transform="translate(-9, -9)">
-          <ShareStepIcon className={iconOpacity(1)} />
+          <ShareStepIcon className={iconOpacity(2)} />
         </g>
       </g>
       <g transform="translate(92, 151)">
         <foreignObject x="-22" y="-5" width="40" height="20">
           <p
             className={`${textColor(
-              2
+              3
             )} text-[4px] text-center inline-block max-w-24 leading-tight`}
           >
             Receive Questions <br /> and Engage
           </p>
         </foreignObject>
 
-        <RoundedStepSquare count={2} />
+        <RoundedStepSquare count={3} />
         <g transform="translate(-9, -9)">
-          <QuestionStepIcon strokeOpacity={iconOpacity(2)} />
+          <QuestionStepIcon strokeOpacity={iconOpacity(3)} />
         </g>
       </g>
 
@@ -73,32 +90,16 @@ const DynamicStepComponent = (props: Iprops) => {
         <foreignObject x="-34" y="-18" width="40" height="20">
           <p
             className={`${textColor(
-              3
+              4
             )} text-[4px] text-center inline-block max-w-24 leading-tight`}
           >
             Earn Money <br /> Seamlessly
           </p>
         </foreignObject>
 
-        <RoundedStepSquare count={3} />
-        <g transform="translate(-9, -9)">
-          <MoneyStepIcon strokeOpacity={iconOpacity(3)} />
-        </g>
-      </g>
-      <g transform="translate(92, 30)">
-        <foreignObject x="-19" y="-31" width="40" height="20">
-          <p
-            className={`${textColor(
-              4
-            )} text-[4px] text-center inline-block max-w-24 leading-tight`}
-          >
-            Sign up and set <br /> up your profile
-          </p>
-        </foreignObject>
-
         <RoundedStepSquare count={4} />
         <g transform="translate(-9, -9)">
-          <ProfileStepIcon strokeOpacity={iconOpacity(4)} />
+          <MoneyStepIcon strokeOpacity={iconOpacity(4)} />
         </g>
       </g>
     </g>

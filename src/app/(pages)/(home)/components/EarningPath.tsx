@@ -12,20 +12,25 @@ const EarningPath = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { isSm } = useWindowSize();
   const [isInView, setIsInView] = useState(false);
+  const [step, setStep] = useState<number>(1);
 
   useEffect(() => {
     let intervalId: ReturnType<typeof setInterval>;
 
     if (isInView) {
-      setScrollProgress(25);
       intervalId = setInterval(() => {
         setScrollProgress((prev) => {
+          const value = prev + 25;
           if (prev === 75) clearInterval(intervalId);
-          return prev + 25;
+          setTimeout(() => {
+            setStep(Math.min(Math.ceil(value / 25) + 1, 4));
+          }, 2000);
+          return value;
         });
-      }, 2500);
+      }, 3500);
     } else {
       setScrollProgress(0);
+      setStep(1);
     }
 
     // Cleanup interval when component unmounts
@@ -34,7 +39,6 @@ const EarningPath = () => {
 
   const circleRadius = 60;
   const circleCircumference = 2 * Math.PI * circleRadius;
-  const step = Math.ceil(scrollProgress / 25);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -70,7 +74,12 @@ const EarningPath = () => {
                     <SmallEarnPath />
                   ) : (
                     <CircularDynamicSvg
-                      {...{ circleRadius, circleCircumference, scrollProgress ,isInView }}
+                      {...{
+                        circleRadius,
+                        circleCircumference,
+                        scrollProgress,
+                        isInView,
+                      }}
                     >
                       <g>
                         <foreignObject x="34" y="33" width="102" height="102">

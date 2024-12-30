@@ -95,28 +95,31 @@ export const incomeData = [
 export const earningPathStepsData = [
   {
     step: 1,
-    title: "Share your personalized ASKPPL link",
-    description:
-      "After setting up your profile, share your personalized ASKPPL link with your followers across all platforms. This link acts as your direct channel for paid Q&A interactions.",
-    icon:ShareStepIcon
+    title: "Sign up and set your profile",
+    description: "Sign up and make your profile on AskPPl app.",
+    icon: ProfileStepIcon
   },
   {
     step: 2,
-    title: "Receive questions and engage",
-    description: "You can receive questions from them and then give answers.",
-    icon:QuestionStepIcon
+    title: "Share your personalized ASKPPL link",
+    description:
+      "After setting up your profile, share your personalized ASKPPL link with your followers across all platforms. This link acts as your direct channel for paid Q&A interactions.",
+    icon: ShareStepIcon
   },
+
   {
     step: 3,
-    title: "Earn money seamlessly",
-    description: "This can make money for you.",
-    icon:MoneyStepIcon
-
+    title: "Receive questions and engage",
+    description: "You can receive questions from them and then give answers.",
+    icon: QuestionStepIcon
   },
   {
     step: 4,
-    title: "Sign up and set your profile",
-    description: "Sign up and make your profile on AskPPl app.",
-    icon:ProfileStepIcon
+    title: "Earn money seamlessly",
+    description: "This can make money for you.",
+    icon: MoneyStepIcon
+
   },
+
+
 ];
