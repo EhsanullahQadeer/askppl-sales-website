@@ -10,8 +10,7 @@ const SearchField = (props: Props) => {
 
   const [inputValue, setInputValue] = useState("");
   const [filteredSuggestions, setFilteredSuggestions] = useState<string[]>([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+  const [isFocused, setIsFocused] = useState(false);
 
   const inputRef = useRef<HTMLDivElement | null>(null);
 
@@ -21,7 +20,6 @@ const SearchField = (props: Props) => {
 
     if (userInput.trim() === "") {
       setFilteredSuggestions([]);
-      setShowSuggestions(false);
       return;
     }
 
@@ -30,18 +28,16 @@ const SearchField = (props: Props) => {
     );
 
     setFilteredSuggestions(matches);
-    setShowSuggestions(matches.length > 0);
   };
 
   const handleSuggestionClick = (item: string) => {
     setInputValue(item);
-    setSelectedItem(item);
-    setShowSuggestions(false);
+    setIsFocused(false);
   };
 
   const handleClickOutside = (e: MouseEvent) => {
     if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
-      setShowSuggestions(false);
+      setIsFocused(false);
     }
   };
 
@@ -50,15 +46,12 @@ const SearchField = (props: Props) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  useEffect(() => {
-    console.log("selected Item ", selectedItem);
-  }, [selectedItem]);
-
   return (
     <div className="relative w-full" ref={inputRef}>
       <div className="relative z-10">
         <input
           type="text"
+          onFocus={() => setIsFocused(true)}
           value={inputValue}
           onChange={handleInputChange}
           placeholder={placeholder}
@@ -69,11 +62,8 @@ const SearchField = (props: Props) => {
         </span>
       </div>
 
-      {showSuggestions && (
-        <ul
-          className="backdrop-50 absolute w-full -mt-4 pt-4 bg-glass-white-gradient text-white rounded-b-xl shadow-md shadow-grey z-[1]"
-          
-        >
+      {!!filteredSuggestions.length && isFocused && (
+        <ul className="backdrop-50 absolute w-full -mt-4 pt-4 bg-glass-white-gradient text-white rounded-b-xl shadow-md shadow-grey z-[2]">
           {filteredSuggestions.map((item, index) => (
             <li
               key={index}
