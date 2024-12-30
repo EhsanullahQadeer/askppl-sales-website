@@ -41,7 +41,7 @@ a ${circleRadius},${circleRadius} 0 1,1 ${2 * circleRadius},0`}
           circleCircumference - (scrollProgress / 100) * circleCircumference
         }
         style={{
-          transition: "stroke-dashoffset 0.3s, stroke 0.3s",
+          transition: "stroke-dashoffset 1.5s, stroke 1.5s",
         }}
       />
       {children}

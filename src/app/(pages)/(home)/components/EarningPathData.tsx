@@ -15,7 +15,7 @@ const EarningPathData = (props: Iprops) => {
   const currentStep = earningPathStepsData.find((item) => item.step === step);
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center p-4">
+    <div className="transition-all duration-300 ease-in-outrelative w-full h-full flex items-center justify-center p-4">
       <div className="flex flex-col justify-center items-center">
         <p className="text-center text-[5px] leading-tight tracking-normal">
           {currentStep?.title}

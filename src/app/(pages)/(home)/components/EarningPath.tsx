@@ -11,35 +11,55 @@ const EarningPath = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const { isSm } = useWindowSize();
-
-  const handleScroll1 = () => {
-    const container = containerRef.current;
-    if (container) {
-      const containerBounds = container.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      if (containerBounds.top <= windowHeight && containerBounds.bottom >= 0) {
-        const scrollProgress =
-          (Math.abs(containerBounds.top) / windowHeight) * 25;
-        setScrollProgress(Math.max(0, Math.min(scrollProgress, 100)));
-      }
-    }
-  };
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll1);
-    return () => window.removeEventListener("scroll", handleScroll1);
-  }, []);
+    let intervalId: ReturnType<typeof setInterval>;
+
+    if (isInView) {
+      setScrollProgress(25);
+      intervalId = setInterval(() => {
+        setScrollProgress((prev) => {
+          if (prev === 75) clearInterval(intervalId);
+          return prev + 25;
+        });
+      }, 1500);
+    } else {
+      setScrollProgress(0);
+    }
+
+    // Cleanup interval when component unmounts
+    return () => clearInterval(intervalId);
+  }, [isInView]);
 
   const circleRadius = 60;
   const circleCircumference = 2 * Math.PI * circleRadius;
+  const step = Math.floor(scrollProgress / 25);
 
-  const step = Math.ceil(scrollProgress / 25);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const isView = entries.some((entry) => entry.isIntersecting);
+        setIsInView(isView);
+      },
+      { threshold: 0.8 } // Trigger when 50% of the element is in view
+    );
+
+    const target = document.getElementById("earning-path-sec");
+    if (target) {
+      observer.observe(target); // Observe the element
+    }
+
+    return () => {
+      if (target) observer.unobserve(target); // Cleanup observer
+    };
+  }, []);
+
   return (
     <div className="sm:mx-6" id="earning-path-sec">
       <div className="max-w-screen-3xl mx-auto">
         <div className="sm:px-10 sm:bg-dim-horizon-gradient rounded-3xl">
-          <div ref={containerRef} className="h-[500vh] relative">
+          <div ref={containerRef} className="h-[100vh] relative">
             <div className="sticky  top-0 z-20 h-screen flex justify-center items-center">
               <div className="absolute top-0 h-screen w-full">
                 <div className="flex justify-center flex-col relative h-screen w-full overflow-hidden">

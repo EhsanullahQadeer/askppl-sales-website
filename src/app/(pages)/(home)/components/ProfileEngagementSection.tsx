@@ -114,7 +114,7 @@ export default function ProfileEngagementSection() {
           <div className="relative flex-1  max-sm:hidden  pl-9">
             <div className="absolute inset-0">
               <div className="overflow-x-hidden h-full pl-9">
-                <div className="h-[1px] top-[calc(50%-20px)] lg:top-[calc(50%-8px)] -z-10 -left-2 w-1/4 bg-lightLime  absolute"></div>
+                <div className="h-[1px] top-[calc(50%-20px)] lg:top-[calc(50%-8px)] 2xl:lg:top-[calc(50%-18px)] -z-10 2xl:-left-16  -left-2  w-1/4 2xl:w-1/2 bg-lightLime  absolute"></div>
 
                 <Swiper
                   direction="vertical"

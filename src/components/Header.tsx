@@ -85,9 +85,7 @@ const Header = () => {
         setHideHeader(isVisible);
       },
       {
-        root: null, // The root is the viewport (default)
-        rootMargin: "0px 0px 200px 0px", // Trigger 200px before entering the viewport
-        threshold: 0, // Trigger both before and after intersection (before entering and after leaving the view)
+        threshold: 0.8,
       }
     );
 
