@@ -9,7 +9,7 @@ import BagOutline from "@/assets/icons/BagOutline";
 
 const SmallEarnPath = () => {
   const [step, setStep] = useState(0);
-  
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setStep((prev) => prev + 1);
@@ -17,7 +17,7 @@ const SmallEarnPath = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const currentStepNumber = (step + 1) % 8;
+  const currentStepNumber = step % 8;
 
   const stepsData = [...earningPathStepsData, ...earningPathStepsData];
 
@@ -29,7 +29,7 @@ const SmallEarnPath = () => {
       <div className="h-14"></div>
       <div className="h-full translate-y-16  bg-center  bg-[url('/images/dotsLayer.svg')] relative left-1/2 -translate-x-1/2   aspect-[1] w-[170%] rounded-full border-t-2 pt-9  border-dashed border-white/30 flex justify-center items-center ">
         {/* icon */}
-        {stepsData.map(({ icon: Icon }, index) => {
+        {stepsData.map(({ icon: Icon, title }, index) => {
           const angle = 45 * index;
           const isSelcetedStep = currentStepNumber == index + 1;
           return (
@@ -46,7 +46,7 @@ const SmallEarnPath = () => {
                     isSelcetedStep ? "text-white" : "text-white/50"
                   } max-w-40 -top-[100px] absolute left-1/2 -translate-x-1/2    text-center text-[16px] font-medium mx-auto transition-all duration-500 ease-linear`}
                 >
-                  {currentStepContent?.title}
+                  {title}
                 </p>
 
                 <div
