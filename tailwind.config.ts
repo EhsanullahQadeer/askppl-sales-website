@@ -36,6 +36,7 @@ export default {
         forest: "#013B30",
         lime: "#90B941",
         lightLime: "#B9E567",
+        lightLimeLight:"rgba(185, 229, 103, 0.32)",
         secondaryLime: "#90B941",
 
         lightPewter: "#DBDBDB",

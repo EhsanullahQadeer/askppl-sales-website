@@ -78,7 +78,11 @@ const Header = () => {
         setIsDisableSection(isVisible);
         setHideHeader(isVisible);
       },
-      { threshold: 0.15 }
+      {
+        root: null, // The root is the viewport (default)
+        rootMargin: "0px 0px 200px 0px", // Trigger 200px before entering the viewport
+        threshold: 0, // Trigger both before and after intersection (before entering and after leaving the view)
+      }
     );
 
     // Observe specified sections

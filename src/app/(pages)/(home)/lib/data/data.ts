@@ -1,8 +1,12 @@
-import influencer1 from "../../../../../assets/images/influencers/influencer1.jpeg";
-import influencer2 from "../../../../../assets/images/influencers/influencer2.jpeg";
-import influencer3 from "../../../../../assets/images/influencers/influencer3.png";
-import influencer4 from "../../../../../assets/images/influencers/influencer4.png";
-import influencer5 from "../../../../../assets/images/influencers/influencer5.jpeg";
+import influencer1 from "@/assets/images/influencers/influencer1.jpeg";
+import influencer2 from "@/assets/images/influencers/influencer2.jpeg";
+import influencer3 from "@/assets/images/influencers/influencer3.png";
+import influencer4 from "@/assets/images/influencers/influencer4.png";
+import influencer5 from "@/assets/images/influencers/influencer5.jpeg";
+import ShareStepIcon from "@/assets/icons/ShareStepIcon";
+import QuestionStepIcon from "@/assets/icons/QuestionStepIcon";
+import MoneyStepIcon from "@/assets/icons/MoneyStepIcon";
+import ProfileStepIcon from "@/assets/icons/ProfileStepIcon";
 
 export const faqData = [
   {
@@ -94,20 +98,25 @@ export const earningPathStepsData = [
     title: "Share your personalized ASKPPL link",
     description:
       "After setting up your profile, share your personalized ASKPPL link with your followers across all platforms. This link acts as your direct channel for paid Q&A interactions.",
+    icon:ShareStepIcon
   },
   {
     step: 2,
     title: "Receive questions and engage",
     description: "You can receive questions from them and then give answers.",
+    icon:QuestionStepIcon
   },
   {
     step: 3,
     title: "Earn money seamlessly",
     description: "This can make money for you.",
+    icon:MoneyStepIcon
+
   },
   {
     step: 4,
     title: "Sign up and set your profile",
     description: "Sign up and make your profile on AskPPl app.",
+    icon:ProfileStepIcon
   },
 ];
