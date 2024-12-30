@@ -39,7 +39,7 @@ const StepsToWinSection = () => {
               key={title + idx}
               className="backdrop-60 p-5 sm:p-8 flex flex-col gap-8 sm:gap-[58px] rounded-20 border border-ghostWhite bg-transparent-white-haze flex-1 min-w-full sm:min-w-80"
             >
-              <div className="w-[60px] h-[60] sm:w-20 sm:h-20 p-[18px] flex justify-center items-center rounded-full bg-linear-black-fade text-lightLime shadow-faint-greenish-shadow backdrop-16">
+              <div className="w-[60px] h-[60px] sm:w-20 sm:h-20 p-[18px] flex justify-center items-center rounded-full bg-linear-black-fade text-lightLime shadow-faint-greenish-shadow backdrop-16">
                 {icon}
               </div>
 

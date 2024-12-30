@@ -48,7 +48,7 @@ const SearchField = (props: Props) => {
 
   return (
     <div className="relative w-full" ref={inputRef}>
-      <div className="relative z-10">
+      <div className="relative z-50">
         <input
           type="text"
           onFocus={() => setIsFocused(true)}
