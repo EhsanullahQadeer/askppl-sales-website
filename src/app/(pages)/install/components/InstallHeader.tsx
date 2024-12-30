@@ -17,7 +17,7 @@ const InstallHeader = () => {
           </div>
         </div>
 
-        <button className="flex gap-2 w-full md:w-[300px] rounded-2xl justify-center items-center px-4 bg-white py-[15px] sm:py-[18px] text-dark">
+        <button className="flex gap-2 w-full md:w-[300px] rounded-2xl justify-center items-center px-4 bg-white py-[15px] sm:py-[18px] text-dark hover:bg-translucentWhite transition-all">
           <span>
             <DownloadIcon />
           </span>

@@ -160,7 +160,7 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-3">
-            <button className="px-3 py-2.5 bg-grey rounded-xl text-white font-medium text-sm sm:text-base whitespace-nowrap">
+            <button className="px-3 py-2.5 bg-grey rounded-xl text-white font-medium text-sm sm:text-base whitespace-nowrap hover:bg-gunMetal hover:text-translucentWhite transition-colors">
               Join wait list
             </button>
 

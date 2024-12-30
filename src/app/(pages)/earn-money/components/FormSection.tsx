@@ -10,10 +10,10 @@ import QuestionAnswerIcon from "@/assets/icons/QuestionAnswerIcon";
 import SubmitIcon from "@/assets/icons/SubmitIcon";
 import DiscordOutline from "@/assets/icons/DiscordOutline";
 import TwitterIcon from "@/assets/icons/TwitterIcon";
-import FacebookIcon from "@/assets/icons/FacebookIcon";
 import YoutubeIcon from "@/assets/icons/YoutubeIcon";
 import LinkedinIcon from "@/assets/icons/LinkedinIcon";
 import logo from "../../../../assets/images/askppl-logo.svg";
+import FacebookCircleIcon from "@/assets/icons/FacebookCircleIcon";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Please fill out this field"),
@@ -100,7 +100,7 @@ const FormSection = (props: IProps) => {
                         <TwitterIcon />
                       </div>
                       <div className="cursor-pointer">
-                        <FacebookIcon />
+                        <FacebookCircleIcon />
                       </div>
                       <div className="cursor-pointer">
                         <YoutubeIcon />

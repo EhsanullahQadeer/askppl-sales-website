@@ -68,7 +68,7 @@ const Pagination = (props: PaginationProps) => {
               pageNumber === currentPage
                 ? "border-mistWhite bg-subtle-frost-gradient"
                 : "border-ghostWhite bg-transparent"
-            }`}
+            } hover:bg-subtle-frost-gradient`}
           >
             {pageNumber}
           </button>

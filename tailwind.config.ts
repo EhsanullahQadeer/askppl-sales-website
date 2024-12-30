@@ -58,6 +58,7 @@ export default {
         mistWhite: "rgba(255, 255, 255, 0.10)",
         froastedWhite: "rgba(255, 255, 255, 0.16)",
         etherealWhite: "rgba(255, 255, 255, 0.2)",
+        milkyFog: "rgba(255, 255, 255, 0.24)",
         softWhite: "rgba(255, 255, 255, 0.5)",
         offWhite: "rgba(255, 255, 255, 0.60)",
         translucentWhite: "rgba(255, 255, 255, 0.75)",
