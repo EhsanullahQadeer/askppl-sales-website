@@ -63,15 +63,21 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
+    setTimeout(() => {
+      window.addEventListener("scroll", handleScroll);
+    });
 
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [handleScroll, lastScrollY]);
+  }, [handleScroll, lastScrollY, pathname]);
 
   useEffect(() => {
+    setHideHeader(false);
+    setLastScrollY(0);
+    setShadowOpacity(0)
+    setIsDisableSection(false)
     const observer = new IntersectionObserver(
       (entries) => {
         const isVisible = entries.some((entry) => entry.isIntersecting);
