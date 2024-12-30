@@ -56,7 +56,7 @@ const SearchField = (props: Props) => {
 
   return (
     <div className="relative w-full" ref={inputRef}>
-      <div className="relative z-10">
+      <div className="relative z-50">
         <input
           type="text"
           value={inputValue}
@@ -71,7 +71,7 @@ const SearchField = (props: Props) => {
 
       {showSuggestions && (
         <ul
-          className="backdrop-50 absolute w-full -mt-4 pt-4 bg-glass-white-gradient text-white rounded-b-xl shadow-md shadow-grey z-[1]"
+          className="backdrop-50 absolute w-full -mt-4 pt-4 bg-glass-white-gradient text-white rounded-b-xl shadow-md shadow-grey z-40"
           
         >
           {filteredSuggestions.map((item, index) => (
