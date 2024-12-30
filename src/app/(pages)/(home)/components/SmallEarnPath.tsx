@@ -31,7 +31,7 @@ const SmallEarnPath = () => {
         {/* icon */}
         {stepsData.map(({ icon: Icon, title }, index) => {
           const angle = 45 * index;
-          const isSelcetedStep = currentStepNumber == index + 1;
+          const isSelcetedStep = currentStepNumber == index;
           return (
             <div
               key={index}
