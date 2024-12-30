@@ -13,21 +13,38 @@ const EarningPath = () => {
   const { isSm } = useWindowSize();
   const [isInView, setIsInView] = useState(false);
   const [step, setStep] = useState<number>(1);
+  const [stopTransition, setStopTransiton] = useState(false);
 
   useEffect(() => {
     let intervalId: ReturnType<typeof setInterval>;
 
     if (isInView) {
-      intervalId = setInterval(() => {
-        setScrollProgress((prev) => {
-          const value = prev + 25;
-          if (prev === 75) clearInterval(intervalId);
-          setTimeout(() => {
-            setStep(Math.min(Math.ceil(value / 25) + 1, 4));
-          }, 2000);
-          return value;
-        });
-      }, 3500);
+      intervalId = setInterval(
+        () => {
+          setScrollProgress((prev) => {
+            let value = prev + 25;
+
+            if (value > 100) value = 0;
+            if (value === 0) {
+              setStopTransiton(true);
+              setStep(1);
+            } else {
+              setStopTransiton(false);
+              const stepValue = Math.ceil(value / 25) + 1;
+              if (stepValue === 5) {
+                setStep(stepValue);
+              } else {
+                setTimeout(() => {
+                  setStep(stepValue);
+                }, 2000);
+              }
+            }
+
+            return value;
+          });
+        },
+        step === 5 ? 2500 : 5500
+      );
     } else {
       setScrollProgress(0);
       setStep(1);
@@ -35,7 +52,7 @@ const EarningPath = () => {
 
     // Cleanup interval when component unmounts
     return () => clearInterval(intervalId);
-  }, [isInView]);
+  }, [isInView, step]);
 
   const circleRadius = 60;
   const circleCircumference = 2 * Math.PI * circleRadius;
@@ -59,6 +76,7 @@ const EarningPath = () => {
     };
   }, []);
 
+  const curremtStep = Math.min(step, 4);
   return (
     <div className="sm:mx-6" id="earning-path-sec">
       <div className="max-w-screen-3xl mx-auto">
@@ -79,13 +97,14 @@ const EarningPath = () => {
                         circleCircumference,
                         scrollProgress,
                         isInView,
+                        stopTransition,
                       }}
                     >
                       <g>
                         <foreignObject x="34" y="33" width="102" height="102">
                           <div className="relative h-full w-full">
                             <div className="absolute inset-0 flex justify-center items-center flex-col">
-                              <EarningPathData step={step} />
+                              <EarningPathData {...{ step: curremtStep }} />
                             </div>
                           </div>
                         </foreignObject>
@@ -97,7 +116,7 @@ const EarningPath = () => {
                         </div>
                       </foreignObject>
 
-                      <DynamicStepComponent {...{ step }} />
+                      <DynamicStepComponent {...{ step: curremtStep }} />
                     </CircularDynamicSvg>
                   )}
                 </div>

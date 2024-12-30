@@ -10,14 +10,15 @@ interface ILargePathToEarnProps {
   scrollProgress: number;
   step: number;
   isInView: boolean;
+  stopTransition: boolean;
 }
 
 const LargePathToEarn: React.FC<ILargePathToEarnProps> = (props) => {
-  const { circleRadius, circleCircumference, scrollProgress, step,isInView } = props;
+  const { circleRadius, circleCircumference, scrollProgress, step,isInView ,stopTransition } = props;
   
   return (
     <CircularDynamicSvg
-      {...{ circleRadius, circleCircumference, scrollProgress ,isInView }}
+      {...{ circleRadius, circleCircumference, scrollProgress ,isInView,stopTransition }}
     >
       <g>
         <foreignObject x="34" y="33" width="102" height="102">
