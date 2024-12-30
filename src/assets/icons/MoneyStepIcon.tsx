@@ -9,6 +9,7 @@ const MoneyStepIcon = (props:ShareStepIconProps) => {
     height="6"
     viewBox="0 0 24 24"
     fill="none"
+    {...props}
   >
     <path
       d="M19.7453 13C20.5362 11.8662 21 10.4872 21 9C21 5.13401 17.866 2 14 2C10.134 2 7 5.134 7 9C7 10.0736 7.24169 11.0907 7.67363 12"

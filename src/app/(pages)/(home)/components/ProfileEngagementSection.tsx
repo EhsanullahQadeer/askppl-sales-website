@@ -19,7 +19,7 @@ export default function ProfileEngagementSection() {
     <div className="mx-5 sm:mx-[60px] lg:mx-[140px] ">
       <div className="mx-auto max-w-screen-2xl">
         <div className="flex flex-wrap">
-          <div className="flex-1 max-lg:hidden pr-9">
+          <div className="flex-1 max-lg:hidden pr-9 flex flex-col justify-center">
             <div className="w-fit">
               <div className="bg-ironGray px-4 py-5 rounded-[22px] max-w-[310px] mx-auto relative">
                 <div className="flex justify-between items-center">
@@ -103,7 +103,7 @@ export default function ProfileEngagementSection() {
             </div>
           </div>
 
-          <div className="flex-[1.3] max-sm:max-h-[400px]">
+          <div className="flex-[1.3] max-sm:max-h-[400px] flex flex-col justify-center">
             <Image
               className="mx-auto object-scale-down h-full w-full"
               src={mobileImg}

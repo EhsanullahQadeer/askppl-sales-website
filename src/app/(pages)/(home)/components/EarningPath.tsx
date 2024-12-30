@@ -23,7 +23,7 @@ const EarningPath = () => {
           if (prev === 75) clearInterval(intervalId);
           return prev + 25;
         });
-      }, 1500);
+      }, 2500);
     } else {
       setScrollProgress(0);
     }
@@ -34,7 +34,7 @@ const EarningPath = () => {
 
   const circleRadius = 60;
   const circleCircumference = 2 * Math.PI * circleRadius;
-  const step = Math.floor(scrollProgress / 25);
+  const step = Math.ceil(scrollProgress / 25);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -70,7 +70,7 @@ const EarningPath = () => {
                     <SmallEarnPath />
                   ) : (
                     <CircularDynamicSvg
-                      {...{ circleRadius, circleCircumference, scrollProgress }}
+                      {...{ circleRadius, circleCircumference, scrollProgress ,isInView }}
                     >
                       <g>
                         <foreignObject x="34" y="33" width="102" height="102">

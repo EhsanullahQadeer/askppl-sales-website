@@ -17,12 +17,12 @@ const EarningPathData = (props: Iprops) => {
   return (
     <div className="transition-all duration-300 ease-in-outrelative w-full h-full flex items-center justify-center p-4">
       <div className="flex flex-col justify-center items-center">
-        <p className="text-center text-[5px] leading-tight tracking-normal">
+        <p className="text-center text-[5px] leading-tight tracking-normal transition-all duration-1000 ease-linear">
           {currentStep?.title}
         </p>
 
         <div className="mt-1 bg-vantaBlack w-full rounded-sm">
-          <div className="flex justify-between items-center border-b-[0.1px] border-stealth w-full p-0.5">
+          <div className="flex justify-between items-center border-b-[0.1px] border-stealth w-full p-0.5 ">
             <div>
               <Image src={askppllogo} alt="logo" className="w-5" />
             </div>
@@ -68,7 +68,7 @@ const EarningPathData = (props: Iprops) => {
         </div>
 
         <div className="mt-[3px]">
-          <p className="font-neueMontreal text-softWhite text-[3px] leading-tight tracking-normal text-center">
+          <p className="font-neueMontreal text-softWhite text-[3px] leading-tight tracking-normal text-center transition-all duration-1000 ease-linear">
             {currentStep?.description}
           </p>
         </div>

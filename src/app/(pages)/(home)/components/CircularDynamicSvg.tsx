@@ -5,10 +5,11 @@ interface IProps {
   circleRadius: number;
   circleCircumference: number;
   scrollProgress: number;
+  isInView: boolean;
 }
 
 const CircularDynamicSvg = (props: IProps) => {
-  const { children, circleRadius, circleCircumference, scrollProgress } = props;
+  const { children, circleRadius, circleCircumference, scrollProgress,isInView } = props;
   return (
     <svg
       className=""
@@ -41,7 +42,7 @@ a ${circleRadius},${circleRadius} 0 1,1 ${2 * circleRadius},0`}
           circleCircumference - (scrollProgress / 100) * circleCircumference
         }
         style={{
-          transition: "stroke-dashoffset 1.5s, stroke 1.5s",
+          transition: isInView ? "stroke-dashoffset 2.5s, stroke 2.5s" : "",
         }}
       />
       {children}
