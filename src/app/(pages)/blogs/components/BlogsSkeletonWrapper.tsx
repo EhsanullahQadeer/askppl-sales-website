@@ -16,7 +16,6 @@ const BlogsSkeletonWrapper = (props: Props) => {
 
   const otherRows = Array.from({ length: remainingCount }, (_, i) => i + 1);
 
-  console.log("otherRows : " + otherRows);
   return (
     <div className="grid grid-cols-1 gap-y-10">
       <div className="flex flex-wrap gap-y-10 gap-x-4">

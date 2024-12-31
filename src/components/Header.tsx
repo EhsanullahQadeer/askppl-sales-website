@@ -115,7 +115,7 @@ const Header = () => {
       style={{
         boxShadow: `0 8px 16px rgba(0, 0, 0, ${shadowOpacity})`,
       }}
-      className={`sticky top-0 z-50 bg-dark transition-all duration-500 ${
+      className={`sticky top-0 z-[999] bg-dark transition-all duration-500 ${
         hideHeader ? "-translate-y-full" : "translate-y-0"
       }`}
     >
